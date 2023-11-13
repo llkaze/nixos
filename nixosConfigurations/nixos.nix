@@ -143,6 +143,7 @@ let
           autojump
           bottom
           cmake
+          croc
           ddgr
           direnv
           duf

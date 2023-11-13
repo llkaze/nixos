@@ -1,0 +1,92 @@
+{
+  "root": "root",
+  "nodes": {
+    "root": {
+      "inputs": {
+        "nimble": "nimble",
+        "nixpkgs": "nixpkgs_3",
+        "home-manager": "home-manager"
+      }
+    },
+    "nimble": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_2"
+      },
+      "locked": {
+        "rev": "e68031106a51ffb88138cd827dfb6d62f1c4cfd0",
+        "repo": "flake-nimble",
+        "type": "github",
+        "owner": "nix-community",
+        "narHash": "sha256-JvGdeb8mO/2xa+j9zSah8B8prCDuVDrxg/sVjnLnWOM=",
+        "lastModified": 1679323550
+      },
+      "original": {
+        "id": "nimble",
+        "type": "indirect"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "rev": "ca012a02bf8327be9e488546faecae5e05d7d749",
+        "repo": "nixpkgs",
+        "type": "github",
+        "owner": "NixOS",
+        "narHash": "sha256-roiSnrqb5r+ehnKCauPLugoU8S36KgmWraHgRqVYndo=",
+        "lastModified": 1697456312
+      },
+      "original": {
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github",
+        "owner": "NixOS"
+      }
+    },
+    "nixpkgs_2": {
+      "locked": {
+        "rev": "d1acd89e0116ff88eba80541027429fc922612e9",
+        "repo": "nixpkgs",
+        "type": "github",
+        "owner": "nixos",
+        "narHash": "sha256-AJK1Q5djPXs/ba3K6gHsVAer9yDPVLic78ZIDsFSkHU=",
+        "lastModified": 1641555862
+      },
+      "original": {
+        "id": "nixpkgs",
+        "type": "indirect"
+      }
+    },
+    "nixpkgs_3": {
+      "locked": {
+        "rev": "ec750fd01963ab6b20ee1f0cb488754e8036d89d",
+        "repo": "nixpkgs",
+        "type": "github",
+        "owner": "NixOS",
+        "narHash": "sha256-s7BBhyLA6MI6FuJgs4F/SgpntHBzz40/qV0xLPW6A1Q=",
+        "lastModified": 1699343069
+      },
+      "original": {
+        "id": "nixpkgs",
+        "ref": "nixpkgs-unstable",
+        "type": "indirect"
+      }
+    },
+    "home-manager": {
+      "inputs": {
+        "nixpkgs": "nixpkgs"
+      },
+      "locked": {
+        "rev": "6a8444467c83c961e2f5ff64fb4f422e303c98d3",
+        "repo": "home-manager",
+        "type": "github",
+        "owner": "nix-community",
+        "narHash": "sha256-nUtGIWf86BOkUbtksWtfglvCZ/otP0FTZlQH8Rzc7PA=",
+        "lastModified": 1699368917
+      },
+      "original": {
+        "id": "home-manager",
+        "type": "indirect"
+      }
+    }
+  },
+  "version": 7
+}

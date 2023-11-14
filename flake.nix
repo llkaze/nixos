@@ -4,6 +4,9 @@
     nixpkgs.url = "flake:nixpkgs/nixpkgs-unstable";
     home-manager.url = "flake:home-manager";
     nimble.url = "flake:nimble";
+    hyprland.url = "github:hyprwm/Hyprland";
+    nur.url = "github:nix-community/NUR";
+    wayland.url = "github:nix-community/nixpkgs-wayland";
   };
   outputs = inputs:
     let

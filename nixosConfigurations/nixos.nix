@@ -22,6 +22,10 @@ let
         };
         hostName = "nixos";
       };
+      time = {
+        timeZone = "Europe/Amsterdam";
+      };
+      i18n.defaultLocale = "en_US.UTF-8";     
       services = {
         xserver = {
           displayManager = {
@@ -34,6 +38,14 @@ let
           layout = "us";
           libinput = {
             enable = true;
+          };
+          hardware.nvidia = { # for hybrid graphics check documentation nvidia optimus prime nixos wiki
+            modesetting.enable = true;
+            powerManagement.enable = false;
+            powerManagement.finegrained = false;
+            open = false;
+            nvidiaSettings = true;
+            package = config.boot.kernelPackages.nvidiaPackages.production;
           };
         };
         blueman = {
@@ -74,17 +86,19 @@ let
       };
       sound = {
         enable = true;
-      };
-      time = {
-        timeZone = "Europe/Amsterdam";
-      };      
+      };    
       hardware = {
         bluetooth = {
           enable = true;
+          driSupport = true;
+          driSupport32Bit = true;
         };
         opengl = {
           enable = true;
         };
+      };
+      nix = {
+        settings.experimental-features = [ "nix-command" "flakes" ];
       };
       nixpkgs = {
         config = { allowUnfree = true; allowInsecure = true; };
@@ -161,6 +175,7 @@ let
           jq
           kitty
           libnotify
+          ncspot
           neofetch
           pavucontrol
           ranger
@@ -181,7 +196,6 @@ let
           #bitwarden
           #discord
           #drawio
-          #firefox
           #flameshot
           #gimp-with-plugins
           #libreoffice
@@ -197,6 +211,7 @@ let
           #thunderbird
           #ungoogled-chromium
           #vlc
+          zathura
         ];
       };
       fonts = {

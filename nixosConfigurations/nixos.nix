@@ -25,7 +25,31 @@ let
       time = {
         timeZone = "Europe/Amsterdam";
       };
-      i18n.defaultLocale = "en_US.UTF-8";     
+      i18n = {
+        defaultLocale = "en_US.UTF-8";
+        #extraLocaleSettings = {};
+      };
+      hardware = {
+        bluetooth = {
+          enable = true;
+        };
+        opengl = {
+          enable = true;
+          driSupport = true;
+          driSupport32Bit = true;
+        };
+        pulseaudio = {
+          enable = true;
+        };
+        nvidia = { # for hybrid graphics check documentation nvidia optimus prime nixos wiki
+          modesetting.enable = true;
+          powerManagement.enable = false;
+          powerManagement.finegrained = false;
+          open = false;
+          nvidiaSettings = true;
+          package = config.boot.kernelPackages.nvidiaPackages.production;
+        };
+      };
       services = {
         xserver = {
           displayManager = {
@@ -39,14 +63,9 @@ let
           libinput = {
             enable = true;
           };
-          hardware.nvidia = { # for hybrid graphics check documentation nvidia optimus prime nixos wiki
-            modesetting.enable = true;
-            powerManagement.enable = false;
-            powerManagement.finegrained = false;
-            open = false;
-            nvidiaSettings = true;
-            package = config.boot.kernelPackages.nvidiaPackages.production;
-          };
+          videoDrivers = [
+            "nvidia"
+          ];
         };
         blueman = {
           enable = true;
@@ -77,6 +96,9 @@ let
             enable = true;
           };
         };
+        printing = {
+          enable = true;
+        };
         spice-vdagentd = {
           enable = true; # qemu specific
         };
@@ -84,24 +106,28 @@ let
           enable = true; # qemu specific
         };
       };
+      security = {
+        polkit = {
+          enable = true;
+        };
+        rtkit = {
+          enable = true;
+        };
+      };
       sound = {
         enable = true;
       };    
-      hardware = {
-        bluetooth = {
-          enable = true;
-          driSupport = true;
-          driSupport32Bit = true;
-        };
-        opengl = {
-          enable = true;
-        };
-      };
       nix = {
-        settings.experimental-features = [ "nix-command" "flakes" ];
+        settings.experimental-features = [
+          "nix-command"
+          "flakes"
+        ];
       };
       nixpkgs = {
-        config = { allowUnfree = true; allowInsecure = true; };
+        config = {
+          allowUnfree = true; 
+          allowInsecure = true; 
+        };
       };
       programs = {
         hyprland = {
@@ -112,14 +138,6 @@ let
           };
         };
         thunar = {
-          enable = true;
-        };
-      };      
-      security = {
-        polkit = {
-          enable = true;
-        };
-        rtkit = {
           enable = true;
         };
       };

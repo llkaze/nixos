@@ -175,6 +175,7 @@ let
           autojump
           bottom
           cmake
+          cmatrix
           croc
           ddgr
           direnv
@@ -196,6 +197,7 @@ let
           ncspot
           neofetch
           pavucontrol
+          pipes-rs
           ranger
           ripgrep
           swww

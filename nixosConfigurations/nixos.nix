@@ -114,12 +114,12 @@ let
         printing = {
           enable = true;
         };
-        spice-vdagentd = {
-          enable = true; # qemu specific
-        };
-        qemuGuest = {
-          enable = true; # qemu specific
-        };
+        #spice-vdagentd = {
+        #  enable = true; # qemu specific
+        #};
+        #qemuGuest = {
+        #  enable = true; # qemu specific
+        #};
       };
       security = {
         polkit = {
@@ -133,8 +133,11 @@ let
         enable = true;
       };    
       nix = {
+        gc = {
+          automatic = true;
+        };
         settings = {
-          auto-optimise-store = true;
+          auto-optimise-store = true; # only for system with ssd; enough cpu resources
           experimental-features = [
             "nix-command"
             "flakes"
@@ -182,15 +185,15 @@ let
           };
         };
       };
-      xdg = {
-        portal = {
-          enable = true;
-          extraPortals = with pkgs; [
-            xdg-desktop-portal-hyprland
-            xdg-desktop-portal-gtk
-          ];
-        };
-      };
+      #xdg = {
+      #  portal = {
+      #    enable = true;
+      #    extraPortals = with pkgs; [
+      #      xdg-desktop-portal-hyprland
+      #      xdg-desktop-portal-gtk
+      #    ];
+      #  };
+      #};
       environment = {
         gnome.excludePackages = (with pkgs; [
             gnome-photos

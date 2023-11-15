@@ -28,7 +28,17 @@ let
       };
       i18n = {
         defaultLocale = "en_US.UTF-8";
-        #extraLocaleSettings = {};
+        extraLocaleSettings = {
+          LC_ADDRESS = "en_US.UTF-8";
+          LC_IDENTIFICATION = "en_US.UTF-8";
+          LC_MEASUREMENT = "en_US.UTF-8";
+          LC_MONETARY = "en_US.UTF-8";
+          LC_NAME = "en_US.UTF-8";
+          LC_NUMERIC = "en_US.UTF-8";
+          LC_PAPER = "en_US.UTF-8";
+          LC_TELEPHONE = "en_US.UTF-8";
+          LC_TIME = "en_US.UTF-8";
+        };
       };
       hardware = {
         bluetooth = {
@@ -54,13 +64,16 @@ let
       };
       services = {
         xserver = {
+          enable = true;
           displayManager = {
-            sddm = {
+            gdm = {
               enable = true;
-              enableHidpi = true;
+              wayland = true;
             };
           };
-          enable = true;
+          desktopManager = {
+            gnome.enable = true;
+          };
           layout = "us";
           libinput = {
             enable = true;
@@ -91,8 +104,8 @@ let
             support32Bit = true;
           };
           enable = true;
-          jack = {
-            enable = true;
+          #jack = {
+          #  enable = true;
           };
           pulse = {
             enable = true;
@@ -135,6 +148,9 @@ let
         };
       };
       programs = {
+        dconf = {
+          enable = true;
+        };
         hyprland = {
           enable = true;
           enableNvidiaPatches = true;
@@ -142,9 +158,9 @@ let
             enable = true;
           };
         };
-        thunar = {
-          enable = true;
-        };
+        #thunar = {
+        #  enable = true;
+        #};
       };
       users = {
         users = {
@@ -166,12 +182,30 @@ let
       xdg = {
         portal = {
           enable = true;
-          extraPortals = [
-            pkgs.xdg-desktop-portal-hyprland
+          extraPortals = with pkgs; [
+            xdg-desktop-portal-hyprland
+            xdg-desktop-portal-gtk
           ];
         };
       };
       environment = {
+        gnome.excludePackages = (with pkgs; [
+            gnome-photos
+            gnome-tour
+            gnome-text-editor
+          ]) ++ (with pkgs.gnome; [
+            cheese
+            epiphany
+            geary
+            gnome-calendar
+            gnome-clocks
+            gnome-contacts
+            gnome-maps
+            gnome-music
+            gnome-weather
+            totem
+            yelp
+        ]);
         systemPackages = with pkgs; [
           vim
           wget
@@ -243,6 +277,7 @@ let
           #ungoogled-chromium
           #vlc
           zathura
+          gnome.adwaita-icon-theme
         ];
       };
       fonts = {

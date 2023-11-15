@@ -196,21 +196,21 @@ let
       #};
       environment = {
         gnome.excludePackages = (with pkgs; [
-            gnome-photos
-            gnome-tour
-            gnome-text-editor
-          ]) ++ (with pkgs.gnome; [
-            cheese
-            epiphany
-            geary
-            gnome-calendar
-            gnome-clocks
-            gnome-contacts
-            gnome-maps
-            gnome-music
-            gnome-weather
-            totem
-            yelp
+          gnome-photos
+          gnome-tour
+          gnome-text-editor
+        ]) ++ (with pkgs.gnome; [
+          cheese
+          epiphany
+          geary
+          gnome-calendar
+          gnome-clocks
+          gnome-contacts
+          gnome-maps
+          gnome-music
+          gnome-weather
+          totem
+          yelp
         ]);
         systemPackages = with pkgs; [
           vim

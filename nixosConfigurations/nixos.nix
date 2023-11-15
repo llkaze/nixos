@@ -33,6 +33,7 @@ let
       hardware = {
         bluetooth = {
           enable = true;
+          package = pkgs.bluez;
         };
         opengl = {
           enable = true;
@@ -119,10 +120,13 @@ let
         enable = true;
       };    
       nix = {
-        settings.experimental-features = [
-          "nix-command"
-          "flakes"
-        ];
+        settings = {
+          auto-optimise-store = true;
+          experimental-features = [
+            "nix-command"
+            "flakes"
+          ];
+        };
       };
       nixpkgs = {
         config = {
@@ -184,7 +188,9 @@ let
           eza
           fastfetch
           fd
+          feh
           ffmpeg
+          foot
           fzf
           gcc
           glances
@@ -192,6 +198,7 @@ let
           gnumake
           gzip
           htop
+          imv
           jq
           kitty
           libnotify
@@ -206,7 +213,9 @@ let
           unzip
           w3m
           wl-clipboard
+          wlr-randr
           yt-dlp
+          xdg-utils
           #wine
           #winetricks
           #lutris
@@ -217,6 +226,7 @@ let
           #bitwarden
           #discord
           #drawio
+          etcher
           #flameshot
           #gimp-with-plugins
           #libreoffice

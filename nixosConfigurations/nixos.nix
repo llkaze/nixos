@@ -51,7 +51,7 @@ let
           driSupport32Bit = true;
         };
         pulseaudio = {
-          enable = true;
+          enable = false; # to support pipeware
         };
         nvidia = { # for hybrid graphics check documentation nvidia optimus prime nixos wiki
           modesetting.enable = true;
@@ -144,7 +144,10 @@ let
       nixpkgs = {
         config = {
           allowUnfree = true; 
-          allowInsecure = true; 
+          allowInsecure = true;
+          permittedInsecurePackages = [
+            "electron-19.1.9"
+          ];
         };
       };
       programs = {
@@ -284,7 +287,7 @@ let
         fontDir = {
           enable = true;
         };
-        fonts = with pkgs; [
+        packages = with pkgs; [
           nerdfonts
           font-awesome
           google-fonts

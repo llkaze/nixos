@@ -1,2 +1,2 @@
 ### MyNix
-`# nixos-rebuild switch --flake github:llkaze/mynix#nixos`
+`# nixos-rebuild switch --flake github:llkaze/nixos`

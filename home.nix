@@ -1,7 +1,8 @@
+{ config, inputs, lib, pkgs, user, ... }: # to-do fix functions
 {
     home = {
         homeDirectory = "/home/lin";
-        stateVersion = "23.05";
+        stateVersion = "23.11";
         username = "lin";
     };
     programs = {
@@ -33,7 +34,9 @@
       };
       obs-studio = {
         enable = true;
-        plugins = pkgs.obs-studio-plugins.wlrobs;
+        plugins = with pkgs.obs-studio-plugins; [
+          wlrobs
+        ];
       };
       starship = {
         enable = true;
@@ -47,6 +50,9 @@
       };
       waybar = {
         enable = true;
+      };
+      wezterm = {
+        enable = true; 
       };
       wofi = {
         enable = true;

@@ -127,6 +127,16 @@
     # qemuGuest = {
     #  enable = true; # qemu specific
     # };
+    # tailscale = {
+    #   enable = true;
+    # };
+    # jellyfin = {
+    #   enable = true;
+    #   openFirewall = false;
+    # };
+    # mullvad-vpn = {
+    #   enable = true;
+    # };
   };
   security = {
     polkit = {
@@ -156,7 +166,7 @@
       allowUnfree = true; 
       allowInsecure = true;
       permittedInsecurePackages = [
-        "electron-19.1.9" # not sure 
+        "electron-19.1.9" # not sure
       ];
     };
   };
@@ -222,6 +232,7 @@
     systemPackages = with pkgs; [
       vim
       wget
+      cava # hyprland
       curl
       aria
       autojump
@@ -237,12 +248,15 @@
       fd
       feh
       ffmpeg
+      fontconfig
       foot
+      freetype
       fzf
       gcc
       glances
       glow
       gnumake
+      grim # hyprland
       gzip
       htop
       imv
@@ -257,10 +271,14 @@
       pywal
       ranger
       ripgrep
+      slurp # hyprland
+      speedtest-go
+      # speedtest-rs # rust equivalent
       swww
       tldr
       unzip
       w3m
+      wireplumber # hyprland
       wl-clipboard # hyprland
       yt-dlp
       xdg-utils
@@ -271,22 +289,22 @@
       # libvirt
       # qemu
       # virt-manager
-      # bitwarden
+      # aichat
+      bitwarden
+      # calibre
       # discord
       # drawio
       etcher
-      # flameshot
       # gimp-with-plugins
       # libreoffice
       # librewolf
       # moonlight-qt
-      # mullvad-vpn
       # nomacs
       # obsidian
+      # openai-whisper
       # qbittorrent
       # spotify
       # sunshine
-      # tailscale
       # thunderbird
       # ungoogled-chromium
       # vlc

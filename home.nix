@@ -6,15 +6,21 @@
         username = "lin";
     };
     programs = {
+      # zsh = {
+      #   enable = true;
+      #   oh-my-zsh = {
+      #     enable = true;
+      #   };
+      # };
       eww = {
         enable = false; # currently using waybar
       };
       firefox = {
         enable = true;
         profiles = {
-          lin = {
+          generic = {
             id = 0;
-            name = "lin";
+            name = "generic";
           };
         };
       };
@@ -40,6 +46,8 @@
       };
       starship = {
         enable = true;
+        enableBashIntegration = true;
+        # enableZshIntegration = true;
       };
       tmux = {
         enable = true;
@@ -52,7 +60,9 @@
         enable = true;
       };
       wezterm = {
-        enable = true; 
+        enable = true;
+        enableBashIntegration = true;
+        # enableZshIntegration = true;
       };
       wofi = {
         enable = true;

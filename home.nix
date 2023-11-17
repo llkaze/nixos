@@ -11,6 +11,9 @@
       #   oh-my-zsh = {
       #     enable = true;
       #   };
+      #   autosuggestions = {
+      #     enable = true;
+      #   };
       # };
       eww = {
         enable = false; # currently using waybar
@@ -48,6 +51,14 @@
         enable = true;
         enableBashIntegration = true;
         # enableZshIntegration = true;
+        settings = {
+          # add_newline = false;
+          # character = {
+          #   success_symbol = "[➜](bold green)";
+          #   error_symbol = "[➜](bold red)";
+          # };
+          # package.disabled = true;
+        };
       };
       tmux = {
         enable = true;

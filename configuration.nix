@@ -11,12 +11,15 @@
         enable = true;
       };
     };
+    # supportedFilesystems = { # support btrfs
+    #   "btrfs"
+    # };
   };
   networking = {
     networkmanager = {
       enable = true;
       # wifi = {
-      #   backend = "iwd"; # wifi backend
+      #   backend = "iwd";
       # };
     };
     hostName = "nixos";
@@ -85,9 +88,9 @@
       libinput = {
         enable = true;
       };
-      videoDrivers = [ # to-do: video drivers might be declared in hardware-configuration.nix
-        "nvidia"
-      ];
+      # videoDrivers = [ # to-do: video drivers might be declared in hardware-configuration.nix
+      #   "nvidia"
+      # ];
     };
     blueman = {
       enable = true;
@@ -202,12 +205,12 @@
     };
   };
   # xdg = { # hyprland and gnome come with their own portals preenabled
-  #  portal = {
-  #    enable = true;
-  #    extraPortals = [
-  #      pkgs.xdg-desktop-portal-hyprland
-  #    ];
-  #  };
+  #   portal = {
+  #     enable = true;
+  #     extraPortals = [
+  #       pkgs.xdg-desktop-portal-hyprland
+  #     ];
+  #   };
   # };
   environment = {
     gnome.excludePackages = (with pkgs; [
@@ -311,6 +314,12 @@
       zathura
       gnome.adwaita-icon-theme
     ];
+    shellAliases = {
+      ls = "eza -l --icons --group-directories-first"; # better ls
+      la = "eza -la --icons --group-directories-first";
+      ld = "eza -lD --icons";
+      ll = "eza -l --icons --group-directories-first";
+    };
   };
   fonts = {
     fontDir = {

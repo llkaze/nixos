@@ -21,8 +21,8 @@
       nixos = nixpkgs.lib.nixosSystem { # hostname default nixos
         system = "x86_64-linux";
         modules = [
-          ./configuration.nix
           ./hardware-configuration.nix
+          ./configuration.nix
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;

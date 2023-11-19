@@ -216,9 +216,12 @@
     gnome.excludePackages = (with pkgs; [
       firefox
       git
+      gnome-user-docs
       gnome-photos
       gnome-tour
       # gnome-text-editor
+      gnome-console
+      xterm
     ]) ++ (with pkgs.gnome; [
       cheese
       epiphany

@@ -266,6 +266,9 @@
       jq
       # kitty # currently trying wezterm/foot
       libnotify # hyprland to-do might be unnecessary with dunst
+      lshw
+      # mpd
+      # ncmpcpp
       ncspot
       neofetch
       os-prober
@@ -303,6 +306,7 @@
       # librewolf
       # moonlight-qt
       # nomacs
+      pspp
       # obsidian
       # openai-whisper
       # qbittorrent

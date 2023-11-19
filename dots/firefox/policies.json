@@ -75,6 +75,10 @@
                 "installation_mode": "normal_installed",
                 "install_url": "https://addons.mozilla.org/firefox/downloads/latest/sponsorblock/latest.xpi"
             },
+            "tridactyl.vim@cmcaine.co.uk": {
+                "installation_mode": "normal_installed",
+                "install_url": "https://addons.mozilla.org/firefox/downloads/latest/tridactyl-vim/latest.xpi"
+            },
             "{b9db16a4-6edc-47ec-a1f4-b86292ed211d}": {
                 "installation_mode": "normal_installed",
                 "install_url": "https://addons.mozilla.org/firefox/downloads/latest/video-downloadhelper/latest.xpi"
@@ -173,7 +177,7 @@
                 "Description": "Search Stack Overflow",
                 "Alias": "/stack",
                 "Method": "GET",
-                "URLTemplate": "https://stackoverflow.com/search?q={searchTerms",
+                "URLTemplate": "https://stackoverflow.com/search?q={searchTerms}",
                 "IconURL": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAMAAACdt4HsAAAAPFBMVEVHcEz0gCT0gCT0gCS8u7v0gCT0gCT0gCT0gCS8u7u8u7v0gCT0gCT0gCT0gCS8u7u8u7u8u7v0gCS8u7t1gf4sAAAAEnRSTlMAWdjrnwupGns1WUaRLcxmyIuX7LrCAAABM0lEQVRYhe2V627DIAxGucxAy2XIef93LebSbVHXxSBNqprvT9IiH+BgWiHOnHmf2MV6h0sEUIhqaQEaEcMKwBYAyhWCJMKcBtsmDjirQaOrTzWpIZU6U1dCm/B8gKG6BKJrAD7BUZ2OnZX4AOFxLH5Wg6U2IpVsDdAPHsgkqeRqCGg6Yqhkaqjzxvo6VOrm81hqUZmx7rqrjOb4/GXLqiEUdXNTye0knzrCNZUTbRBNQ6ArCjW/vsQORABWI4O/X38IjcASSE2jjOxnBo7/g9JnRRWkrZdR8xYg+hHW6BQ8COZVtjIkjd8pBwsvOefr+BClua9EtbHLn4Bt2z5/fBOd6f8LNHb9pe4JgALeeR4gun0iDyBxH/dqALD7wNIpfI39DyB/PE4+CniWFwCcOXNmOjecFCO9HDWGmAAAAABJRU5ErkJggg=="
             },
             {
@@ -189,13 +193,13 @@
                 "Description": "Search Nix packages",
                 "Alias": "/nix",
                 "Method": "GET",
-                "URLTemplate": "https://community.chocolatey.org/packages?q={searchTerms}",
-                "IconURL": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAMAAACdt4HsAAAAyVBMVEX+/v7///+AtOKAteKAteOAtOOWwuiSwOd3pdWRrtWSRxZulcjn2tPq8PeGuOTgyr5+QiKoZT6eUSJ4Ngx0nc9/ueqSRAjf7Ph+OxKSQgChyeqTPACBrdTT5PSQUS6En7yPWT2Lc2681++wz+ze29v38/GhwN6ji4OoYDWWvN6Xj5OeSACfSw59NwaGlquQVy6GkZ6KeXeBp8iLbF2OX0eNZ12KgIuOX1KIgYSGiZCRTCB7SjWNZlN6WVN6cHZ4hp53Tz58Wkl5kLX6XeICAAAD1ElEQVRYhc2XDXObOBCG+ZBMK5e0zSGIQBiD2971WmOM7TRx0/Su//9HdVcCTGNEnLgzd++AF2bQstp9tDKWdbZsG3/wgCtbXT3lhN9W2pu+7Ftr1LZhqMN6TgTN8KNJPcGencPzZDX56OyzcvDfTmHwrvV7gu3isNI0Oi2cYQ5sqyCTRRFpvXtt1ntD3mz/glLwEaM+/PnXW4Pmr46wayMrqEu8STxBffz706XW58+XPbHlm1cPJnRYjZHrUG8yuSCu6xJSipAxkayqtWAHXf2hHBhW44I66MBFUV5v2SyvOZeb8MiBoYwpJSoCLS4ryfGi3qKHMAyHHfSyGDuHCFCkMeVM7GfbXb5rHAzWwFJJVA4cHOU4ejRY4pbXVZlJns3DsRz4HiUqiVBNOOBUQstBYGQuzFPAABxdBaeRHshpe++Qa/MUQF7fAb7bLfMvX3Y3Nbxc3Tu0nC8HHLQcpL9EQKCMe5X6WYVBwJQcKnfLkRwABjqJQJEGSRWOhfOSIFlw8ptRDiJIX8dBmTA2293c5nu2rxQOUro8+zqA8i9pbDjgGbz6rnQhh7kAB/D2LL+DSL4tjRyoBU00B0QCfNuMQ9jgYJsRl8qVENec34+thchrOCBQL7YvueJhFeZYgyoJZyXn380oq7Wkq0CB/nBOEACSJfMay5Ox1S1kMnhj5MCOSFtGXu2ZyBVBtL7LgCdwVksIhAT/mDmYdByQa8HEmmseXC7zG4lUIkzB/ZUpB1YMD6sqkHoXsnCLtcMVma2SXBJyuynhPvixNHLgAwC0c8AYTJm7EhZQuIeheZLsMAfBlZEDxEA7gEHgYL/OsmrD4BJmkAHVawAkmP5r5sCPNUgUcwASIAwFJ1DPWF4D4cH03syBXWiUKa9mhy4YQl8EIMpScqzC9MdYS6NNFWTe9VGxlqqcVGMRTIN3xg057UACknQvF+LWIU7XDzCC6cQf+kNjq52pc0DlJklEIja16gNtPwAOpgGN/WEOCkp6/YC7ZZW5mgXVmrUFBw56GOAAWhrpFpPaFzg5FjogdOEPJRFS4NKmrTuGU0UATz1Mg94X4v6+MCwdgVtY9mA/aFoaloyofaG1tN0nyEAOekE0IDlmoQN6kZo6QkrbMrZ1f2iRA+oUgxwcSFRNHELurBZtq0C9yB7uiSqJ3osx6Sos+v8qDlcL3Fw9CHJc2GrTgSTaPgTpxR9fPiYPyhQfgYAoX8RF6j+uKC1iKMTxWkijfnnHZPm9/6QPy3GK7JOfPNWfZbVfCfp7oXf3pK+25+k3fPL8pkQ8/7vx/zKFc3QmBz8BWIpfL/TDOggAAAAASUVORK5CYII="
+                "URLTemplate": "https://search.nixos.org/packages?channel=unstable&from=0&size=50&sort=relevance&type=packages&query={searchTerms}",
+                "IconURL": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACo0lEQVQ4jaWTSUiUcRjGf+//+z6X0Ym0BRNzTLKEoi5RULQRJm1GRlBE0b4e2jNajOYgFQUdWjy1nCSoMDCiCCIkOkWltBjTomNi1oS2WDPzzf/tUEJYt57be3h+vLzP+8B/Sv4cKqsaF6raC2rtyvoTMxuqb7fvAo4C64EOoA7VNeHy4df7PKYf8CXQA7q5fGNDlpfh1YlIM7AN1YNY/Yby+q8NKqsaBZgFlKraZZryJ1jrn/ET8ZbQuIJpQ0JDlqDqAgfDcwprKvc2ZiP0Xjs21bq/QUXACWA0kFRIgm4yRmh/Fn2fPTDQmhnMHCpwt3zTnSBCDVALPP0FUHoUtjiuuPnFuZuBUR87uo/3dHW3JXrjNpVIFmPTzwHLgjkZzdbqGuAB8FQO3WzzMgKe2T8tLxG+1TbF+rZeVRtQ2RCuGJEAOHzjracpWxv/npz56nEX1mo3yGKQqFTfip5HKUY1iWoI1UyBBUfmFT3+81j7r0bGRls+1H6J9U4W43QiEhExrS4iaaAeyCiEYbFo7P6rh5FU/7yb7rUYMaZQjPPaWFoxxgPUAKsRWY6RjlRK33a87MwzTvrOih030/rMM1Zc8qyf3GZ9P8uPx9fWn7xSFv/6owy16wSg+nb7UuC8tXbno4YnpeKY1YFgYGvpxKKIccTEOj8N/xD9tM9NT4uExodOu57rK/oiXFYQ64uxGbiYnZtVZ1yvVERWqZojyYTveOnu0Jy8XMnJH2xxzEhgvqq2AJVArO8TnyNU7Zs4qMdxvOnGcYN+Qgu72j4/EMN24CzgotoE7AF2A2/+6sKiPXfHADcQ807EBFSRlG/nTaoo6Y7/8C8jMhaRueHZBc/+2QURUyzGGSBiaoBTIoxxPbP8wIz8byDngAFASf+E/ks/AV32FkH5eMKgAAAAAElFTkSuQmCC"
             },
             {
-                "Name": "NixOS wiki",
-                "Description": "Search NixOS wiki",
-                "Alias": "/nixh",
+                "Name": "NixOS Wiki",
+                "Description": "Search NixOS Wiki",
+                "Alias": "/nixw",
                 "Method": "GET",
                 "URLTemplate": "https://nixos.wiki/index.php?search={searchTerms}",
                 "IconURL": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACo0lEQVQ4jaWTSUiUcRjGf+//+z6X0Ym0BRNzTLKEoi5RULQRJm1GRlBE0b4e2jNajOYgFQUdWjy1nCSoMDCiCCIkOkWltBjTomNi1oS2WDPzzf/tUEJYt57be3h+vLzP+8B/Sv4cKqsaF6raC2rtyvoTMxuqb7fvAo4C64EOoA7VNeHy4df7PKYf8CXQA7q5fGNDlpfh1YlIM7AN1YNY/Yby+q8NKqsaBZgFlKraZZryJ1jrn/ET8ZbQuIJpQ0JDlqDqAgfDcwprKvc2ZiP0Xjs21bq/QUXACWA0kFRIgm4yRmh/Fn2fPTDQmhnMHCpwt3zTnSBCDVALPP0FUHoUtjiuuPnFuZuBUR87uo/3dHW3JXrjNpVIFmPTzwHLgjkZzdbqGuAB8FQO3WzzMgKe2T8tLxG+1TbF+rZeVRtQ2RCuGJEAOHzjracpWxv/npz56nEX1mo3yGKQqFTfip5HKUY1iWoI1UyBBUfmFT3+81j7r0bGRls+1H6J9U4W43QiEhExrS4iaaAeyCiEYbFo7P6rh5FU/7yb7rUYMaZQjPPaWFoxxgPUAKsRWY6RjlRK33a87MwzTvrOih030/rMM1Zc8qyf3GZ9P8uPx9fWn7xSFv/6owy16wSg+nb7UuC8tXbno4YnpeKY1YFgYGvpxKKIccTEOj8N/xD9tM9NT4uExodOu57rK/oiXFYQ64uxGbiYnZtVZ1yvVERWqZojyYTveOnu0Jy8XMnJH2xxzEhgvqq2AJVArO8TnyNU7Zs4qMdxvOnGcYN+Qgu72j4/EMN24CzgotoE7AF2A2/+6sKiPXfHADcQ807EBFSRlG/nTaoo6Y7/8C8jMhaRueHZBc/+2QURUyzGGSBiaoBTIoxxPbP8wIz8byDngAFASf+E/ks/AV32FkH5eMKgAAAAAElFTkSuQmCC"

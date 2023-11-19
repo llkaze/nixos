@@ -218,7 +218,7 @@
       git
       gnome-photos
       gnome-tour
-      gnome-text-editor
+      # gnome-text-editor
     ]) ++ (with pkgs.gnome; [
       cheese
       epiphany

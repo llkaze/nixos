@@ -85,5 +85,6 @@
     };
   };
   home.file."../../etc/firefox/policies/policies.json".source = ./dots/firefox/policies.json;
+  home.file.".mozilla/firefox/generic/user.js".source = ./dots/firefox/user.js;
   home.file.".config/monitors.xml".source = ./dots/gnome/monitors.xml;
 }

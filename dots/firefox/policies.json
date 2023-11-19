@@ -6,7 +6,7 @@
         "DisablePocket": true,
         "HardwareAcceleration": true,
         "NoDefaultBookmarks": true,
-        "OffertoSaveLoginsDefault": false,
+        "OfferToSaveLoginsDefault": false,
         "PasswordManagerEnabled": false,
         "FirefoxHome": {
             "Search": true,

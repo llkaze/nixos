@@ -84,6 +84,6 @@
       enable = true;
     };
   };
-  home.file."/etc/firefox/policies/policies.json".source = ./dots/firefox/policies.json;
+  home.file."../../etc/firefox/policies/policies.json".source = ./dots/firefox/policies.json;
   home.file.".config/monitors.xml".source = ./dots/gnome/monitors.xml;
 }

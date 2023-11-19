@@ -274,6 +274,7 @@
       neofetch
       os-prober
       pavucontrol # hyprland
+      piper
       pipes-rs
       pywal
       ranger

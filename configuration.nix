@@ -1,5 +1,8 @@
 { config, inputs, lib, pkgs, ... }: # to-do fix functions
 {
+  imports = [
+    ./hardware-configuration.nix
+  ];
   boot = {
     # kernelPackages = pkgs.linuxPackages_latest;
     loader = {

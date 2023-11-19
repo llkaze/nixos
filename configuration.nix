@@ -335,6 +335,10 @@
       google-fonts
     ];
   };
+  qt = {
+    platformTheme = "qt5ct";
+    style = "kvantum";
+  };
   system = {
     stateVersion = "23.11";
   };

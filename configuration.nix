@@ -225,6 +225,7 @@
     ]) ++ (with pkgs.gnome; [
       cheese
       epiphany
+      # evince
       geary
       gnome-calendar
       gnome-clocks

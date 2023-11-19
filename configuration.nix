@@ -254,9 +254,7 @@
       fd
       feh
       ffmpeg
-      fontconfig
       foot
-      freetype
       fzf
       gcc
       glances

@@ -283,6 +283,7 @@
       # speedtest-rs # rust equivalent
       swww
       tldr
+      ttyper
       unzip
       via
       w3m

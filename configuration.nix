@@ -215,7 +215,6 @@
   environment = {
     gnome.excludePackages = (with pkgs; [
       firefox
-      git
       gnome-user-docs
       gnome-photos
       gnome-tour

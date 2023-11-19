@@ -286,6 +286,7 @@
       swww
       tldr
       unzip
+      via
       w3m
       wireplumber # hyprland
       wl-clipboard # hyprland

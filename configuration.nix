@@ -277,6 +277,7 @@
       # ncmpcpp
       ncspot
       neofetch
+      nix-tree
       os-prober
       pavucontrol # hyprland
       piper

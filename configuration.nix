@@ -142,7 +142,7 @@
     };
     jellyfin = {
       enable = true;
-      package = pkgs.jellyfin-web;
+      package = pkgs.jellyfin;
       openFirewall = false;
     };
     mullvad-vpn = {

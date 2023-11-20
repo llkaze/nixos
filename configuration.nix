@@ -314,6 +314,7 @@
       drawio
       etcher
       gimp-with-plugins
+      krabby
       libreoffice
       # librewolf
       moonlight-qt

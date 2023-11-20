@@ -73,6 +73,7 @@
   services = {
     xserver = {
       enable = true;
+      excludePackages = [ pkgs.xterm ]
       displayManager = {
         gdm = {
           enable =  true;
@@ -220,7 +221,6 @@
       gnome-tour
       # gnome-text-editor
       gnome-console
-      xterm
     ]) ++ (with pkgs.gnome; [
       cheese
       epiphany
@@ -279,6 +279,7 @@
       pywal
       ranger
       ripgrep
+      sct
       slurp # hyprland
       speedtest-go
       # speedtest-rs # rust equivalent

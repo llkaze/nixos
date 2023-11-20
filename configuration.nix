@@ -339,7 +339,8 @@
       nv = "nvidia-smi";
       cdg = "cd ~/Documents/git";
       cdd = "cd ~/.config";
-      codium = "codium --enable-features=UseOzonePlatform,WaylandWindowDecorations --ozone-platform-hint=auto";
+      # codium = "codium --enable-features=UseOzonePlatform,WaylandWindowDecorations --ozone-platform-hint=auto";
+      # discord = "discord --enable-features=UseOzonePlatform,WaylandWindowDecorations --ozone-platform-hint=auto";
     };
     # shellInit = {
     #   ""
@@ -351,6 +352,9 @@
     # zshrc
     #   interactiveShellInit
     #   promptInit
+    sessionVariables = {
+      NIXOS_OZONE_WL = "1";
+    };
   };
   fonts = {
     fontDir = {

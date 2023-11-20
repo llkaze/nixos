@@ -27,7 +27,7 @@
       settings = {
         main = {
           term = "xterm-256color";
-          font = "IosevkaTerm Nerd Font:size=11";
+          # font = "IosevkaTerm Nerd Font:size=11";
           font = "Hack Nerd Font:size=11";
           dpi-aware = "yes";
         };

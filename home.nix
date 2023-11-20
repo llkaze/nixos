@@ -24,9 +24,29 @@
     };
     foot = {
       enable = true;
+      settings = {
+        main = {
+          term = "xterm-256color";
+
+          font = "IosevkaTerm NF:size=11";
+          dpi-aware = "yes";
+        };
+
+        mouse = {
+          hide-when-typing = "yes";
+        };
+      };
     };
     kitty = {
       enable = true;
+      font = {
+        name = "IosevkaTerm NF";
+        size = "11"
+      };
+      shellIntegration = {
+        enableBashIntegration = true;
+        enableZshIntegration = true;
+      };
     };
     # wezterm = { # os error 71
     #   enable = true;
@@ -37,6 +57,9 @@
     #   }";
     # };
     bat = {
+      enable = true;
+    };
+    cava = {
       enable = true;
     };
     # eww = {

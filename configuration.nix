@@ -208,6 +208,7 @@
         ];
         group = "users";
         home = "/home/lin";
+        # shell = pkgs.zsh # enable zsh as default shell for user
         # password = "nixos"; # change with passwd or using nano/vim
       };
     };
@@ -245,7 +246,6 @@
     systemPackages = with pkgs; [
       vim
       wget
-      cava # hyprland
       curl
       aria
       autojump

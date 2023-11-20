@@ -36,6 +36,7 @@
   };
   time = {
     timeZone = "Europe/Amsterdam";
+    hardwareClockInLocalTime = true;
   };
   i18n = {
     defaultLocale = "en_US.UTF-8";

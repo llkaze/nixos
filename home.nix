@@ -28,7 +28,7 @@
         main = {
           term = "xterm-256color";
 
-          font = "IosevkaTerm NF:size=11";
+          font = "IosevkaTerm Nerd Font:size=11";
           dpi-aware = "yes";
         };
 
@@ -40,7 +40,7 @@
     kitty = {
       enable = true;
       font = {
-        name = "IosevkaTerm NF";
+        name = "IosevkaTerm Nerd Font";
       };
       shellIntegration = {
         enableBashIntegration = true;

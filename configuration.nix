@@ -333,6 +333,7 @@
       la = "eza -la --icons --group-directories-first";
       ld = "eza -lD --icons";
       ll = "eza -l --icons --group-directories-first";
+      ff = "fastfetch";
     };
     # shellInit = {
     #   ""

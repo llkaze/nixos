@@ -10,7 +10,7 @@
         "PasswordManagerEnabled": false,
         "FirefoxHome": {
             "Search": true,
-            "Pocket":false,
+            "Pocket": false,
             "Snippets": false,
             "TopSites": false, 
             "Highlights": false

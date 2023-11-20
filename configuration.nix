@@ -327,6 +327,7 @@
       thunderbird
       ungoogled-chromium
       vlc
+      webcord-vencord
       zathura
       gnome.adwaita-icon-theme
       nautilus-open-any-terminal

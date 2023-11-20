@@ -239,7 +239,7 @@
         WHEEL_DOWN = "add volume -5";
       };
       config = {
-        vo = "pu";
+        vo = "gpu";
         profile = "gpu-hq";
         gpu-context = "wayland";
         force-window = true;

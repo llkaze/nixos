@@ -41,7 +41,6 @@
       enable = true;
       font = {
         name = "IosevkaTerm NF";
-        size = "11.0";
       };
       shellIntegration = {
         enableBashIntegration = true;

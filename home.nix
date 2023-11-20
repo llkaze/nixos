@@ -243,7 +243,7 @@
         profile = "gpu-hq";
         gpu-context = "wayland";
         force-window = true;
-        script-opts = "/nix/store/n8n752bgv9sgsqw2j47k8mdq5mqipxks-system-path/bin/yt-dlp";
+        script-opts = "ytdl_hook-ytdl_path=/nix/store/n8n752bgv9sgsqw2j47k8mdq5mqipxks-system-path/bin/yt-dlp";
         ytdl-format = "bestvideo+bestaudio";
         cache-default = 4000000;
       };

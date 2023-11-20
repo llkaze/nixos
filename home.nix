@@ -156,13 +156,13 @@
                 urls = [{ template = "https://scholar.google.com/scholar?q={searchTerms}"; }];
                 iconUpdateURL = "https://icon.horse/icon/scholar.google.com";
                 updateInterval = 24 * 60 * 60 * 1000; # every day
-                definedAliases = [ "/drive" ];
+                definedAliases = [ "/scholar" ];
               };
               "UBA" = {
                 urls = [{ template = "https://lib.uva.nl/discovery/search?query=any,contains,{searchTerms}&tab=Everything&search_scope=DN_and_CI_and_PURE&vid=31UKB_UAM1_INST:UVA&offset=0"; }];
                 iconUpdateURL = "https://icon.horse/icon/uba.uva.nl";
                 updateInterval = 24 * 60 * 60 * 1000; # every day
-                definedAliases = [ "/drive" ];
+                definedAliases = [ "/uba" ];
               };
               "DuckDuckGo".metaData.hidden = true;
               "Amazon.com".metaData.hidden = true;

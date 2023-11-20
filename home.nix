@@ -247,7 +247,7 @@
         cache-default = 4000000;
       };
       scriptOpts = {
-        ytdl_hook-ytdl_path = "/nix/store/n8n752bgv9sgsqw2j47k8mdq5mqipxks-system-path/bin/yt-dlp"
+        ytdl_hook-ytdl_path = "/nix/store/n8n752bgv9sgsqw2j47k8mdq5mqipxks-system-path/bin/yt-dlp";
       };
     };
     neovim = {

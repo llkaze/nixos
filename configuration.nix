@@ -347,6 +347,7 @@
     # shellInit = {
     #   ""
     # };
+    interactiveShellInit = "krabby random";
     # zshenv - order in which settings are loaded for zsh
     #   shellInit
     # zprofile

@@ -238,6 +238,7 @@
     systemPackages = with pkgs; [
       vim
       wget
+      bat
       cava # hyprland
       curl
       aria
@@ -340,10 +341,11 @@
       google-fonts
     ];
   };
-  qt = {
-    platformTheme = "qt5ct";
-    style = "kvantum";
-  };
+  # qt = {
+  #   enable = true;
+  #   platformTheme = "qt5ct";
+  #   style = "kvantum";
+  # };
   system = {
     stateVersion = "23.11";
   };

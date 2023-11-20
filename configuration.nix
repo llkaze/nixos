@@ -332,6 +332,8 @@
       zathura
       gnome.adwaita-icon-theme
       nautilus-open-any-terminal
+      papirus-icon-theme
+      catppuccin-kvantum
     ];
     shellAliases = {
       ls = "eza -lh --icons --group-directories-first"; # better ls
@@ -357,6 +359,8 @@
     #   promptInit
     sessionVariables = {
       NIXOS_OZONE_WL = "1";
+      # QT_QPA_PLATFORM = "wayland";
+      # QT_QPA_PLATFORMTHEME = "qt5ct";
     };
   };
   fonts = {

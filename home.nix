@@ -22,6 +22,20 @@
       #   "";
       # };
     };
+    foot = {
+      enable = true;
+    };
+    kitty = {
+      enable = true;
+    };
+    # wezterm = { # os error 71
+    #   enable = true;
+    #   enableBashIntegration = true;
+    #   enableZshIntegration = true;
+    #   extraConfig = "return {
+    #     enable_wayland = true,
+    #   }";
+    # };
     bat = {
       enable = true;
     };
@@ -230,14 +244,6 @@
     };
     waybar = {
       enable = true;
-    };
-    wezterm = {
-      enable = true;
-      enableBashIntegration = true;
-      enableZshIntegration = true;
-      extraConfig = "return {
-        enable_wayland = true,
-      }";
     };
     wofi = {
       enable = true;

@@ -142,6 +142,7 @@
     };
     jellyfin = {
       enable = true;
+      package = pkgs.jellyfin-web;
       openFirewall = false;
     };
     mullvad-vpn = {
@@ -260,7 +261,6 @@
       fd
       feh
       ffmpeg
-      foot
       fzf
       gcc
       glances
@@ -271,7 +271,6 @@
       htop
       imv
       jq
-      # kitty # currently trying wezterm/foot
       libnotify # hyprland to-do might be unnecessary with dunst
       lshw
       # mpd

@@ -1,4 +1,4 @@
-{ config, inputs, lib, pkgs, user, ... }: # to-do fix functions
+{ config, inputs, lib, pkgs, user, ... }:
 {
   home = {
       homeDirectory = "/home/lin";
@@ -9,7 +9,7 @@
     bash = {
       enable = true;
       # initExtra = {
-      #   "eval "$(starship init bash)"";
+      #   "";
       # };
     };
     zsh = {
@@ -19,15 +19,15 @@
     #   };
       enableAutosuggestions = true;
       # initExtra = {
-      #   "eval "$(starship init bash)"";
+      #   "";
       # };
     };
     bat = {
       enable = true;
     };
-    eww = {
-      enable = false; # currently using waybar
-    };
+    # eww = {
+    #   enable = true; # currently using waybar
+    # };
     firefox = {
       enable = true;
       profiles = {
@@ -234,7 +234,10 @@
     wezterm = {
       enable = true;
       enableBashIntegration = true;
-      # enableZshIntegration = true;
+      enableZshIntegration = true;
+      extraConfig = "return {
+        enable_wayland = true,
+      }";
     };
     wofi = {
       enable = true;
@@ -248,4 +251,5 @@
   # home.file."../../etc/firefox/policies/policies.json".source = ./dots/firefox/policies.json;
   home.file.".mozilla/firefox/generic/user.js".source = ./dots/firefox/user.js;
   # home.file.".config/monitors.xml".source = ./dots/gnome/monitors.xml;
+  home.file.".config/VSCodium/product.json".source = ./dots/codium/product.json;
 }

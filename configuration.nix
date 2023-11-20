@@ -1,4 +1,4 @@
-{ config, inputs, lib, pkgs, ... }: # to-do fix functions
+{ config, inputs, lib, pkgs, ... }:
 {
   boot = {
     kernelPackages = pkgs.linuxPackages_latest;
@@ -207,7 +207,7 @@
         ];
         group = "users";
         home = "/home/lin";
-        password = "nixos"; # change with passwd or using nano/vim
+        # password = "nixos"; # change with passwd or using nano/vim
       };
     };
   };
@@ -282,10 +282,12 @@
       pavucontrol # hyprland
       piper
       pipes-rs
+      python3
       pywal
       ranger
       ripgrep
       sct
+      sl
       slurp # hyprland
       speedtest-go
       # speedtest-rs # rust equivalent
@@ -327,17 +329,28 @@
       vlc
       zathura
       gnome.adwaita-icon-theme
+      nautilus-open-any-terminal
     ];
     shellAliases = {
-      ls = "eza -l --icons --group-directories-first"; # better ls
-      la = "eza -la --icons --group-directories-first";
-      ld = "eza -lD --icons";
-      ll = "eza -l --icons --group-directories-first";
+      ls = "eza -lh --icons --group-directories-first"; # better ls
+      la = "eza -lah --icons --group-directories-first";
+      ld = "eza -lDh --icons";
       ff = "fastfetch";
+      nv = "nvidia-smi";
+      cdg = "cd ~/Documents/git";
+      cdd = "cd ~/.config";
+      buildf = "nixos-rebuild switch --flake ."
     };
     # shellInit = {
     #   ""
     # };
+    # zshenv - order in which settings are loaded for zsh
+    #   shellInit
+    # zprofile
+    #   loginShellInit
+    # zshrc
+    #   interactiveShellInit
+    #   promptInit
   };
   fonts = {
     fontDir = {

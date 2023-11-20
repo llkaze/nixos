@@ -11,7 +11,7 @@
     #   oh-my-zsh = {
     #     enable = true;
     #   };
-    #   Autosuggestions = {
+    #   enableAutosuggestions = {
     #     enable = true;
     #   };
     # };

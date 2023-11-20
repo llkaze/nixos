@@ -7,7 +7,7 @@
       <primary>yes</primary>
       <monitor>
         <monitorspec>
-          <connector>DVI-D-0</connector>
+          <connector>DVI-D-1</connector>
           <vendor>BNQ</vendor>
           <product>ZOWIE XL LCD</product>
           <serial>GAG01248SL0</serial>
@@ -15,7 +15,7 @@
         <mode>
           <width>1920</width>
           <height>1080</height>
-          <rate>144.00076293945312</rate>
+          <rate>144.001</rate>
         </mode>
       </monitor>
     </logicalmonitor>
@@ -29,7 +29,7 @@
       </transform>
       <monitor>
         <monitorspec>
-          <connector>DP-0</connector>
+          <connector>DP-1</connector>
           <vendor>AOC</vendor>
           <product>24P2W1G5</product>
           <serial>HCLL6HA007065</serial>
@@ -37,7 +37,7 @@
         <mode>
           <width>1920</width>
           <height>1080</height>
-          <rate>60</rate>
+          <rate>60.000</rate>
         </mode>
       </monitor>
     </logicalmonitor>

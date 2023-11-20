@@ -8,9 +8,9 @@
   programs = {
     bash = {
       enable = true;
-      initExtra = {
-        "eval "$(starship init bash)"";
-      };
+      # initExtra = {
+      #   "eval "$(starship init bash)"";
+      # };
     };
     zsh = {
       enable = true;
@@ -18,9 +18,9 @@
     #     enable = true;
     #   };
       enableAutosuggestions = true;
-      initExtra = {
-        "eval "$(starship init bash)"";
-      };
+      # initExtra = {
+      #   "eval "$(starship init bash)"";
+      # };
     };
     bat = {
       enable = true;

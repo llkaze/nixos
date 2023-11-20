@@ -11,9 +11,7 @@
     #   oh-my-zsh = {
     #     enable = true;
     #   };
-    #   enableAutosuggestions = {
-    #     enable = true;
-    #   };
+    #   enableAutosuggestions = true;
     # };
     eww = {
       enable = false; # currently using waybar

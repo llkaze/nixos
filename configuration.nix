@@ -339,7 +339,7 @@
       nv = "nvidia-smi";
       cdg = "cd ~/Documents/git";
       cdd = "cd ~/.config";
-      buildf = "nixos-rebuild switch --flake ."
+      buildf = "nixos-rebuild switch --flake .";
     };
     # shellInit = {
     #   ""

@@ -369,11 +369,11 @@
       google-fonts
     ];
   };
-  # qt = {
-  #   enable = true;
-  #   platformTheme = "qt5ct";
-  #   style = "kvantum";
-  # };
+  qt = {
+    enable = true;
+    platformTheme = "qt5ct";
+    style = "kvantum";
+  };
   system = {
     stateVersion = "23.11";
   };

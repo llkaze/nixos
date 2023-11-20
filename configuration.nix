@@ -309,8 +309,8 @@
       virt-manager
       # aichat
       bitwarden
+      cartridges
       # calibre
-      discord
       drawio
       etcher
       gimp-with-plugins

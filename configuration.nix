@@ -142,8 +142,7 @@
       enable = true;
     };
     jellyfin = {
-      enable = true;
-      package = pkgs.jellyfin;
+      enable = true; # sudo mkdir /media && sudo chown $USER: /media
       openFirewall = false;
     };
     mullvad-vpn = {

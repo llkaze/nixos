@@ -339,7 +339,7 @@
       nv = "nvidia-smi";
       cdg = "cd ~/Documents/git";
       cdd = "cd ~/.config";
-      buildf = "nixos-rebuild switch --flake .";
+      codium = "codium --enable-features=UseOzonePlatform,WaylandWindowDecorations --ozone-platform-hint=auto";
     };
     # shellInit = {
     #   ""

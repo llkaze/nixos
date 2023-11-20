@@ -1,7 +1,7 @@
 { config, inputs, lib, pkgs, ... }: # to-do fix functions
 {
   boot = {
-    # kernelPackages = pkgs.linuxPackages_latest;
+    kernelPackages = pkgs.linuxPackages_latest;
     loader = {
       efi = {
         canTouchEfiVariables = true;
@@ -9,6 +9,9 @@
       };
       systemd-boot = {
         enable = true;
+        netbootxyz = {
+          enable = true;
+        };
       };
     };
     # supportedFilesystems = { # support btrfs
@@ -89,9 +92,9 @@
       libinput = {
         enable = true;
       };
-      # videoDrivers = [ # to-do: video drivers might be declared in hardware-configuration.nix
-      #   "nvidia"
-      # ];
+      videoDrivers = [ # to-do: video drivers might be declared in hardware-configuration.nix
+        "nvidia"
+      ];
     };
     blueman = {
       enable = true;
@@ -121,6 +124,9 @@
       pulse = {
         enable = true;
       };
+      wireplumber = {
+        enable = true;
+      };
     };
     printing = {
       enable = true;
@@ -131,16 +137,16 @@
     # qemuGuest = {
     #  enable = true; # qemu specific
     # };
-    # tailscale = {
-    #   enable = true;
-    # };
-    # jellyfin = {
-    #   enable = true;
-    #   openFirewall = false;
-    # };
-    # mullvad-vpn = {
-    #   enable = true;
-    # };
+    tailscale = {
+      enable = true;
+    };
+    jellyfin = {
+      enable = true;
+      openFirewall = false;
+    };
+    mullvad-vpn = {
+      enable = true;
+    };
   };
   security = {
     polkit = {
@@ -238,7 +244,6 @@
     systemPackages = with pkgs; [
       vim
       wget
-      bat
       cava # hyprland
       curl
       aria
@@ -290,37 +295,36 @@
       unzip
       via
       w3m
-      wireplumber # hyprland
       wl-clipboard # hyprland
       yt-dlp
       xdg-utils
-      # wine
-      # winetricks
-      # lutris
-      # bottles
-      # libvirt
-      # qemu
-      # virt-manager
+      wine
+      winetricks
+      lutris
+      bottles
+      libvirt
+      qemu
+      virt-manager
       # aichat
       bitwarden
       # calibre
-      # discord
-      # drawio
+      discord
+      drawio
       etcher
-      # gimp-with-plugins
-      # libreoffice
+      gimp-with-plugins
+      libreoffice
       # librewolf
-      # moonlight-qt
-      # nomacs
+      moonlight-qt
+      nomacs
       pspp
-      # obsidian
-      # openai-whisper
-      # qbittorrent
-      # spotify
-      # sunshine
-      # thunderbird
-      # ungoogled-chromium
-      # vlc
+      obsidian
+      openai-whisper
+      qbittorrent
+      spotify
+      sunshine
+      thunderbird
+      ungoogled-chromium
+      vlc
       zathura
       gnome.adwaita-icon-theme
     ];
@@ -330,6 +334,9 @@
       ld = "eza -lD --icons";
       ll = "eza -l --icons --group-directories-first";
     };
+    # shellInit = {
+    #   ""
+    # };
   };
   fonts = {
     fontDir = {

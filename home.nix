@@ -6,13 +6,25 @@
       username = "lin";
   };
   programs = {
-    # zsh = {
-    #   enable = true;
+    bash = {
+      enable = true;
+      initExtra = {
+        "eval "$(starship init bash)"";
+      };
+    };
+    zsh = {
+      enable = true;
     #   oh-my-zsh = {
     #     enable = true;
     #   };
-    #   enableAutosuggestions = true;
-    # };
+      enableAutosuggestions = true;
+      initExtra = {
+        "eval "$(starship init bash)"";
+      };
+    };
+    bat = {
+      enable = true;
+    };
     eww = {
       enable = false; # currently using waybar
     };
@@ -199,7 +211,7 @@
     starship = {
       enable = true;
       enableBashIntegration = true;
-      # enableZshIntegration = true;
+      enableZshIntegration = true;
       settings = {
         # add_newline = false;
         # character = {
@@ -233,7 +245,7 @@
       enable = true;
     };
   };
-  home.file."../../etc/firefox/policies/policies.json".source = ./dots/firefox/policies.json;
+  # home.file."../../etc/firefox/policies/policies.json".source = ./dots/firefox/policies.json;
   home.file.".mozilla/firefox/generic/user.js".source = ./dots/firefox/user.js;
-  home.file.".config/monitors.xml".source = ./dots/gnome/monitors.xml;
+  # home.file.".config/monitors.xml".source = ./dots/gnome/monitors.xml;
 }

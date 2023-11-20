@@ -234,6 +234,21 @@
     };
     mpv = {
       enable = true;
+      bindings = {
+        WHEEL_UP = "add volume +5";
+        WHEEL_DOWN = "add volume -5";
+      };
+      config = {
+        vo = "pu";
+        profile = "gpu-hq";
+        gpu-context = "wayland";
+        force-window = true;
+        ytdl-format = "bestvideo+bestaudio";
+        cache-default = 4000000;
+      };
+      scriptOpts = {
+        ytdl_hook-ytdl_path = "/nix/store/n8n752bgv9sgsqw2j47k8mdq5mqipxks-system-path/bin/yt-dlp"
+      };
     };
     neovim = {
       enable = true;

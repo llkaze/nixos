@@ -331,7 +331,6 @@
       webcord-vencord
       zathura
       gnome.adwaita-icon-theme
-      nautilus-open-any-terminal
       papirus-icon-theme
       catppuccin-kvantum
     ];

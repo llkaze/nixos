@@ -333,6 +333,7 @@
       gnome.adwaita-icon-theme
       papirus-icon-theme
       catppuccin-kvantum
+      nwg-look
     ];
     shellAliases = {
       ls = "eza -lh --icons --group-directories-first"; # better ls

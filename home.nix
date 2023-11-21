@@ -329,4 +329,7 @@
   home.file.".mozilla/firefox/generic/user.js".source = ./dots/firefox/user.js;
   # home.file.".config/monitors.xml".source = ./dots/gnome/monitors.xml;
   home.file.".config/VSCodium/product.json".source = ./dots/codium/product.json;
+  home.file.".config/hypr/hyprland.conf".source = ./dots/hyprland/hyperland.conf;
+  home.file.".config/hypr/start.sh".source = ./dots/hyprland/start.sh;
+  home.file.".config/hypr/keybindings.conf".source = ./dots/hyprland/keybindings.conf;
 }

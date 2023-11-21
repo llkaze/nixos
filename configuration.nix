@@ -277,11 +277,13 @@
       # ncmpcpp
       ncspot
       neofetch
+      networkmanagerapplet
       nix-tree
       os-prober
       pavucontrol # hyprland
       piper
       pipes-rs
+      # psst
       python3
       pywal
       ranger
@@ -330,7 +332,6 @@
       vlc
       webcord-vencord
       zathura
-      nwg-look
     ];
     shellAliases = {
       ls = "eza -lh --icons --group-directories-first"; # better ls
@@ -340,8 +341,7 @@
       nv = "nvidia-smi";
       cdg = "cd ~/Documents/git";
       cdd = "cd ~/.config";
-      codium = null;
-      # discord = "discord --enable-features=UseOzonePlatform,WaylandWindowDecorations --ozone-platform-hint=auto";
+      # electron x = "x --enable-features=UseOzonePlatform,WaylandWindowDecorations --ozone-platform-hint=auto";
     };
     # shellInit = {
     #   ""
@@ -356,7 +356,8 @@
     #   promptInit
     sessionVariables = {
       NIXOS_OZONE_WL = "1";
-      # QT_QPA_PLATFORM = "wayland";
+      QT_QPA_PLATFORM = "wayland";
+      WLR_NO_HARDWARE_CURSORS = "1";
       # QT_QPA_PLATFORMTHEME = "qt5ct";
     };
   };

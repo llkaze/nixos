@@ -29,7 +29,8 @@
         main = {
           term = "xterm-256color";
           # font = "IosevkaTerm Nerd Font:size=11";
-          font = "Hack Nerd Font:size=11";
+          # font = "Hack Nerd Font:size=11";  
+          font = "Dosis:size=11";
           dpi-aware = "yes";
         };
 
@@ -233,7 +234,7 @@
     git = {
       enable = true;
       userEmail = "x@x.com";
-      userName = "x";
+      userName = "llkaze";
     };
     lazygit = {
       enable = true;
@@ -261,7 +262,7 @@
       enable = true;
     };
     obs-studio = {
-      enable = true;
+      enable = true;  
       plugins = with pkgs.obs-studio-plugins; [
         wlrobs
       ];
@@ -314,8 +315,10 @@
   gtk = {
     enable = true;
     cursorTheme = {
-      package = pkgs.vanilla-dmz;
-      name = "Vanilla-DMZ";
+      # package = pkgs.vanilla-dmz;
+      package = pkgs.phinger-cursors;
+      # name = "Vanilla-DMZ";
+      name = "Phinger";
       size = 16;
     };
     iconTheme = {
@@ -323,9 +326,9 @@
       name = "Papirus";
     };
     theme = {
-      name = "Catppuccin-Mocha-Compact-Pink-Dark";
+      name = "Catppuccin-Mocha-Compact-Lavender-Dark";
       package = pkgs.catppuccin-gtk.override {
-        accents = [ "pink" ];
+        accents = [ "blue" "flamingo" "green" "lavender" "maroon" "mauve" "peach" "pink" "red" "rosewater" "sapphire" "sky" "teal" "yellow" ];
         size = "compact";
         tweaks = [ "rimless" "black" ];
         variant = "mocha";

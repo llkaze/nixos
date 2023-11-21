@@ -15,20 +15,25 @@
         url = "github:vaxerski/Hyprland";
         inputs.nixpkgs.follows = "nixpkgs";
     };
+    ags = {
+      url = "github:Aylur/ags";
+    };
   };
-  outputs = inputs@{ nixpkgs, home-manager, hyprland, ... }: {
+  outputs = inputs@{ nixpkgs, home-manager, ... }: {
     nixosConfigurations = {
       nixos = nixpkgs.lib.nixosSystem { # hostname default nixos
         system = "x86_64-linux";
+        specialArgs = { inherit inputs; };
         modules = [
           ./hardware-configuration.nix
           ./configuration.nix
           home-manager.nixosModules.home-manager
           {
-            home-manager.useGlobalPkgs = true;
-            home-manager.users.lin = import ./home.nix;
-
-            # Optionally, use home-manager.extraSpecialArgs to pass arguments to home
+            home-manager = {
+              useGlobalPkgs = true;
+              #  extraSpecialArgs = { inherit inputs; }; # defined twice?
+              users.lin = import ./home.nix;
+            };
           }
         ];
       };

@@ -1,5 +1,6 @@
 { config, inputs, lib, pkgs, user, ... }:
 {
+  # imports = [ inputs.ags.homeManagerModules.default ]; # import for ags ?
   home = {
       homeDirectory = "/home/lin";
       stateVersion = "23.11";
@@ -56,6 +57,9 @@
     #     enable_wayland = true,
     #   }";
     # };
+    ags = { # enable ags
+      enable = true
+    };
     bat = {
       enable = true;
     };

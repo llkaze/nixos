@@ -1,0 +1,15 @@
+*:not(tooltip):not(menubar):not(menu):not(menuitem) {
+	all: unset;
+    //-gtk-icon-theme: "adwaita";
+}
+
+// Colors
+@import './colors';
+
+// Components
+@import './bar/bar';
+@import './desktop';
+@import './dock';
+@import './launcher/launcher';
+@import './brightnessPopup';
+@import './volumePopup';

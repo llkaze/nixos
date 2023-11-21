@@ -1,0 +1,38 @@
+.launcher {
+    color: $fg;
+    background: $bg1;
+    padding: 6px;
+}
+
+.launcherApp {
+    border-radius: 12px;
+    padding: 3px;
+    margin: 3px;
+    &:focus {
+        background: $bg;
+    }
+}
+
+.launcherEntry {
+    caret-color: $fg;
+    background: $bg;
+    border-radius: 12px;
+    padding: 3px 12px;
+    margin: 6px;
+}
+
+.launcherItem {}
+
+.launcherItemIcon {
+    margin: 3px 6px;
+}
+
+.launcherItemTitle {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.launcherItemDescription {
+    font-size: 12px;
+}
+

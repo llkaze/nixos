@@ -59,6 +59,7 @@
     # };
     ags = { # enable ags
       enable = true;
+      configDir = ./dots/ags;
     };
     bat = {
       enable = true;
@@ -290,6 +291,19 @@
     };
     wofi = {
       enable = true;
+      settings = {
+        width = 270;
+        height = 960;
+        prompt = "Search...";
+        allow_images = false;
+        term = "foot";
+        hide-scroll = true;
+        location = "top";
+        no_actions = true;
+        columns = 1;
+        gtk_dark = true;
+        image_size = 0;
+      };
     };
   };
   services = {
@@ -332,4 +346,8 @@
   home.file.".config/hypr/hyprland.conf".source = ./dots/hyprland/hyprland.conf;
   home.file.".config/hypr/start.sh".source = ./dots/hyprland/start.sh;
   home.file.".config/hypr/keybindings.conf".source = ./dots/hyprland/keybindings.conf;
+  home.file.".config/wofi" = {
+    recursive = true;
+    source = ./dots/wofi;
+  };
 }

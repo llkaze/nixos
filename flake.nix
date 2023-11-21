@@ -19,7 +19,7 @@
       url = "github:Aylur/ags";
     };
   };
-  outputs = inputs@{ nixpkgs, home-manager, ... }: {
+  outputs = inputs@{ nixpkgs, home-manager, ... }: { # to-do cleanup
     nixosConfigurations = {
       nixos = nixpkgs.lib.nixosSystem { # hostname default nixos
         system = "x86_64-linux";
@@ -31,7 +31,7 @@
           {
             home-manager = {
               useGlobalPkgs = true;
-              #  extraSpecialArgs = { inherit inputs; }; # defined twice?
+              extraSpecialArgs = { inherit inputs; };
               users.lin = import ./home.nix;
             };
           }

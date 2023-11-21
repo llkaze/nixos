@@ -340,7 +340,7 @@
       nv = "nvidia-smi";
       cdg = "cd ~/Documents/git";
       cdd = "cd ~/.config";
-      # codium = "codium --enable-features=UseOzonePlatform,WaylandWindowDecorations --ozone-platform-hint=auto";
+      codium = null;
       # discord = "discord --enable-features=UseOzonePlatform,WaylandWindowDecorations --ozone-platform-hint=auto";
     };
     # shellInit = {

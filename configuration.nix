@@ -330,9 +330,6 @@
       vlc
       webcord-vencord
       zathura
-      gnome.adwaita-icon-theme
-      papirus-icon-theme
-      catppuccin-kvantum
       nwg-look
     ];
     shellAliases = {
@@ -372,11 +369,6 @@
       font-awesome
       google-fonts
     ];
-  };
-  qt = {
-    enable = true;
-    platformTheme = "qt5ct";
-    style = "kvantum";
   };
   system = {
     stateVersion = "23.11";

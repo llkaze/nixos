@@ -41,6 +41,7 @@
       enable = true;
       font = {
         name = "Hack Nerd Font";
+        size = 11;
       };
       shellIntegration = {
         enableBashIntegration = true;
@@ -290,6 +291,34 @@
   services = {
     dunst = {
       enable = true;
+    };
+  };
+  gtk = {
+    enable = true;
+    cursorTheme = {
+      package = pkgs.vanilla-dmz;
+      name = "Vanilla-DMZ";
+      size = 16;
+    };
+    iconTheme = {
+      package = pkgs.papirus-icon-theme;
+      name = "Papirus";
+    };
+    theme = {
+      name = "Catppuccin-Mocha-Compact-Pink-Dark";
+      package = pkgs.catppuccin-gtk.override {
+        accents = [ "pink" ];
+        size = "compact";
+        tweaks = [ "rimless" "black" ];
+        variant = "mocha";
+      };
+    };
+  };
+  qt = {
+    enable = true;
+    platformTheme = "qtct";
+    style = {
+      name = "kvantum";
     };
   };
   # home.file."../../etc/firefox/policies/policies.json".source = ./dots/firefox/policies.json;

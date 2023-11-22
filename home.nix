@@ -134,8 +134,8 @@
                 definedAliases = [ "/nix" ];
               };
               "NixOS Wiki" = {
-                urls = [{ template = "https://icon.horse/icon/nixos.org"; }];
-                iconUpdateURL = "";
+                urls = [{ template = "https://nixos.wiki/index.php?search={searchTerms}"; }];
+                iconUpdateURL = "https://icon.horse/icon/nixos.org";
                 updateInterval = 24 * 60 * 60 * 1000; # every day
                 definedAliases = [ "/nixw" ];
               };

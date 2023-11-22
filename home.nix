@@ -9,6 +9,7 @@
         nwg-look
         gnome.gnome-themes-extra
         gtk-engine-murrine
+        gnomeExtensions.material-shell
         gruvbox-gtk-theme
       ];
   };
@@ -355,8 +356,8 @@
   home.file.".config/hypr/hyprland.conf".source = ./dots/hyprland/hyprland.conf;
   home.file.".config/hypr/start.sh".source = ./dots/hyprland/start.sh;
   home.file.".config/hypr/keybindings.conf".source = ./dots/hyprland/keybindings.conf;
-  home.file.".config/wofi" = {
-    recursive = true;
-    source = ./dots/wofi;
-  };
+  # home.file.".config/wofi" = {
+  #   recursive = true;
+  #   source = ./dots/wofi;
+  # };
 }

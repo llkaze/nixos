@@ -181,20 +181,10 @@
       ];
     };
   };
-  programs = {
-    dconf = {
+  virtualisation = {
+    libvirtd = {
       enable = true;
     };
-    hyprland = {
-      enable = true;
-      enableNvidiaPatches = true;
-      xwayland = {
-        enable = true;
-      };
-    };
-    # thunar = { # currently using nautilus
-    #  enable = true;
-    # };
   };
   users = {
     users = {
@@ -205,6 +195,7 @@
         extraGroups = [
           "networkmanager"
           "wheel"
+          "libvirtd"
         ];
         group = "users";
         home = "/home/lin";
@@ -221,6 +212,24 @@
   #     ];
   #   };
   # };
+  programs = {
+    dconf = {
+      enable = true;
+    };
+    hyprland = {
+      enable = true;
+      enableNvidiaPatches = true;
+      xwayland = {
+        enable = true;
+      };
+    };
+    virt-manager = {
+      enable = true;
+    };
+    # thunar = { # currently using nautilus
+    #  enable = true;
+    # };
+  };
   environment = {
     gnome.excludePackages = (with pkgs; [
       firefox
@@ -309,9 +318,6 @@
       winetricks
       lutris
       bottles
-      libvirt
-      qemu
-      virt-manager
       # aichat
       bitwarden
       cartridges

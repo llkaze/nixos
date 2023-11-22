@@ -28,9 +28,9 @@
       settings = {
         main = {
           term = "xterm-256color";
-          # font = "IosevkaTerm Nerd Font:size=11";
+          font = "Iosevka Comfy Wide Fixed:size=11";
           # font = "Hack Nerd Font:size=11";  
-          font = "Dosis:size=11";
+          # font = "Dosis:size=11";
           dpi-aware = "yes";
         };
 
@@ -42,7 +42,7 @@
     kitty = {
       enable = true;
       font = {
-        name = "Hack Nerd Font";
+        name = "Iosevka Comfy Wide Fixed";
         size = 11;
       };
       shellIntegration = {
@@ -318,7 +318,7 @@
       # package = pkgs.vanilla-dmz;
       package = pkgs.phinger-cursors;
       # name = "Vanilla-DMZ";
-      name = "Phinger";
+      name = "phinger-cursors";
       size = 16;
     };
     iconTheme = {
@@ -326,7 +326,7 @@
       name = "Papirus";
     };
     theme = {
-      name = "Catppuccin-Mocha-Compact-Lavender-Dark";
+      name = "Catppuccin-Mocha-Compact-Mauve-Dark";
       package = pkgs.catppuccin-gtk.override {
         accents = [ "blue" "flamingo" "green" "lavender" "maroon" "mauve" "peach" "pink" "red" "rosewater" "sapphire" "sky" "teal" "yellow" ];
         size = "compact";

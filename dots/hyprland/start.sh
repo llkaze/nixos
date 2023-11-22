@@ -5,10 +5,16 @@ swww init &
 swww img ~/Documents/git/nixos/dots/swww/sunset.png &
 
 # bar, launcher notifications and widgets
-ags &
+# ags &
 
 # networkmanager applet
 nm-applet --indicator &
 
 # bluetooth applet
-blueman-applet 
+blueman-applet &
+
+# bar
+waybar
+
+# notification
+dunst

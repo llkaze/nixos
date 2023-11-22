@@ -272,6 +272,7 @@
       htop
       imv
       jq
+      libappindicator-gtk3
       libnotify # hyprland to-do might be unnecessary with dunst
       lshw
       # mpd
@@ -327,6 +328,7 @@
       obsidian
       openai-whisper
       qbittorrent
+      sniffnet
       spotify
       sunshine
       thunderbird

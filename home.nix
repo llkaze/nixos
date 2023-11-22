@@ -5,6 +5,12 @@
       homeDirectory = "/home/lin";
       stateVersion = "23.11";
       username = "lin";
+      packages = with pkgs; [
+        nwg-look
+        gnome.gnome-themes-extra
+        gtk-engine-murrine
+        gruvbox-gtk-theme
+      ];
   };
   programs = {
     bash = {
@@ -315,10 +321,10 @@
   gtk = {
     enable = true;
     cursorTheme = {
-      # package = pkgs.vanilla-dmz;
       package = pkgs.phinger-cursors;
-      # name = "Vanilla-DMZ";
+      # package = pkgs.capitaine-cursors-themed;
       name = "phinger-cursors";
+      name = "Capitaine Gruvbox";
       size = 16;
     };
     iconTheme = {

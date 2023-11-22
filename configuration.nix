@@ -250,6 +250,7 @@
       aria
       autojump
       bottom
+      brightnessctl
       cmake
       cmatrix
       croc
@@ -332,6 +333,8 @@
       vlc
       webcord-vencord
       zathura
+      nwg-look
+      cinnamon.nemo-with-extensions
     ];
     shellAliases = {
       ls = "eza -lh --icons --group-directories-first"; # better ls

@@ -330,7 +330,7 @@
       package = pkgs.catppuccin-gtk.override {
         accents = [ "blue" "flamingo" "green" "lavender" "maroon" "mauve" "peach" "pink" "red" "rosewater" "sapphire" "sky" "teal" "yellow" ];
         size = "compact";
-        tweaks = [ "rimless" "black" ];
+        tweaks = [ "normal" ];
         variant = "mocha";
       };
     };

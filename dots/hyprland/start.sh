@@ -2,7 +2,7 @@
 
 # wallpaper daemon
 swww init &
-sww img ~/Documents/git/nixos/dots/swww/evening-sky.png &
+swww img ~/Documents/git/nixos/dots/swww/sunset.png &
 
 # bar, launcher notifications and widgets
 ags &

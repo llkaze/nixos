@@ -1,31 +1,18 @@
-import { Utils, App } from './imports.js';
+import { readFile } from 'resource:///com/github/Aylur/ags/utils.js';
+import App from 'resource:///com/github/Aylur/ags/app.js';
+const pkgjson = JSON.parse(readFile(App.configDir + '/package.json'));
 
-// Windows
-import { Bar } from './modules/bar/bar.js';
-import { DesktopMenu } from './modules/desktop.js';
-import { Dock } from './modules/dock.js';
-import { launcher } from './modules/launcher/launcher.js';
-import { Popups } from './modules/popups.js';
-import { CornerTopleft, CornerTopright } from './modules/corners.js';
-
-// Compile scss
-Utils.exec(`sassc ${App.configDir}/scss/main.scss ${App.configDir}/style.css`);
-App.resetCss();
-App.applyCss(`${App.configDir}/style.css`);
-
-// Main config
-export default {
-    style: `${App.configDir}/style.css`,
-    closeWindowDelay: {
-        'launcher': 300,
-    },
-    windows: [
-        Bar(),
-        DesktopMenu(),
-        Dock(),
-        launcher,
-        Popups(),
-        /*CornerTopleft(),
-        CornerTopright()*/
-    ],
+const v = {
+    ags: `v${pkg.version}`,
+    expected: `v${pkgjson.version}`,
 };
+
+function mismatch() {
+    print(`my config expects ${v.expected}, but your ags is ${v.ags}`);
+    App.connect('config-parsed', app => app.Quit());
+    return {};
+}
+
+export default v.ags === v.expected
+    ? (await import('./js/main.js')).default
+    : mismatch();

@@ -289,6 +289,7 @@
       pywal
       ranger
       ripgrep
+      sassc
       sct
       sl
       slurp # hyprland

@@ -333,7 +333,6 @@
       unzip
       via
       w3m
-      wezterm
       wl-clipboard # hyprland
       yt-dlp
       xdg-utils

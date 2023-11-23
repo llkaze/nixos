@@ -77,8 +77,9 @@
       };
     };
     wezterm = {
+      enable = true; 
       extraConfig = "return {
-        enable_wayland = true,
+        enable_wayland = false,
       }";
     };
     #   enableBashIntegration = true;

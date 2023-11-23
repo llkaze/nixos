@@ -15,10 +15,6 @@
       url = "github:vaxerski/Hyprland";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    wezterm = {
-      url = "github:wez/wezterm";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     # ags = {
     #   url = "github:Aylur/ags";
     # };

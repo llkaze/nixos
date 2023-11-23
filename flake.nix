@@ -2,22 +2,26 @@
   description = "System flake";
   inputs = {
     nixpkgs = {
-        url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+      url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     };
     nur = {
-        url = "github:nix-community/NUR";
+      url = "github:nix-community/NUR";
     };
     home-manager = {
-        url = "github:nix-community/home-manager";
-        inputs.nixpkgs.follows = "nixpkgs"; 
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs"; 
     };
     hyprland = {
-        url = "github:vaxerski/Hyprland";
-        inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:vaxerski/Hyprland";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
-    ags = {
-      url = "github:Aylur/ags";
+    wezterm = {
+      url = "github:wez/wezterm";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
+    # ags = {
+    #   url = "github:Aylur/ags";
+    # };
   };
   outputs = inputs@{ nixpkgs, home-manager, ... }: { # to-do cleanup
     nixosConfigurations = {

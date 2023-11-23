@@ -180,16 +180,27 @@
         "electron-19.1.9" # not sure
       ];
     };
-    overlays = [(
-      self: super: {
-        pspp = super.pspp.overrideAttrs (old: {
-            src = super.fetchurl {
-              url = "https://benpfaff.org/~blp/pspp-master/20231105144641/x86_64/pspp-2.0.0-pre3g2c9fe2-x86_64-build20231105145055.tar.gz";
-              sha256 = "sha256-10hpvw1gkzxvwymrjj4iz3q5nkklwjwx58fmswkr21nbi3rvzx7x";
-            };
-        });
-      })
-    ];
+    # overlays = [(
+    #   self: super: {
+    #     pspp = super.pspp.overrideAttrs (old: rec {
+    #         version = "2.0.0-pre3g2c9fe2-x86_64-build20231105145055";
+    #         src = [
+    #           /home/lin/Downloads/pspp-2.0.0-pre3g2c9fe2-x86_64-build20231105145055
+    #         ];
+    #         # super.fetchurl {
+    #         #   url = "https://benpfaff.org/~blp/pspp-master/20231105144641/x86_64/pspp-2.0.0-pre3g2c9fe2-x86_64-build20231105145055.tar.gz";
+    #         #   sha256 = "sha256-/fS/84jLBpEn19Wh0rnkdE5b8PiRSJmr57v/+QLfF4I="; # nix hash to-sri x --type sha256 nix-prefetch url --type sha256
+    #         # };
+    #         preFixup = ''
+    #           wrapProgram "/home/lin/Downloads/pspp-2.0.0-pre3g2c9fe2-x86_64-build20231105145055/bin/psppire" \
+    #           --prefix XDG_DATA_DIRS : "/home/lin/Downloads/pspp-2.0.0-pre3g2c9fe2-x86_64-build20231105145055/share" \
+    #           --prefix XDG_DATA_DIRS : "$XDG_ICON_DIRS" \
+    #           --prefix XDG_DATA_DIRS : "$GSETTINGS_SCHEMAS_PATH" \
+    #           --prefix GIO_EXTRA_MODULES : "/nix/store/cz5cnyk96l879kl533bdzzjv29b89w81-dconf-0.40.0-lib/lib/gio/modules"
+    #         '';
+    #     });
+    #   })
+    # ];
   };
   virtualisation = {
     libvirtd = {
@@ -281,6 +292,7 @@
       fd
       feh
       ffmpeg
+      file
       fzf
       gcc
       glances
@@ -321,6 +333,7 @@
       unzip
       via
       w3m
+      wezterm
       wl-clipboard # hyprland
       yt-dlp
       xdg-utils

@@ -1,16 +1,35 @@
 { config, inputs, lib, pkgs, user, ... }:
 {
-  imports = [ inputs.ags.homeManagerModules.default ]; # import ags
+  # imports = [ inputs.ags.homeManagerModules.default ]; # import ags
   home = {
       homeDirectory = "/home/lin";
       stateVersion = "23.11";
       username = "lin";
+      pointerCursor = {
+        package = pkgs.phinger-cursors;
+        name = "phinger-cursors";
+        size = 16;
+        x11 = {
+          enable = true;
+          defaultCursor = "phinger-cursors";
+        };
+        gtk = {
+          enable = true;
+        };
+      };
       packages = with pkgs; [
         nwg-look
         gnome.gnome-themes-extra
         gtk-engine-murrine
         gnomeExtensions.material-shell
-        gruvbox-gtk-theme
+        gnomeExtensions.forge
+        nautilus-open-any-terminal
+        # catppuccin-gtk.override {
+        #   accents = [ "blue" "flamingo" "green" "lavender" "maroon" "mauve" "peach" "pink" "red" "rosewater" "sapphire" "sky" "teal" "yellow" ];
+        #   size = "compact";
+        #   tweaks = [ "normal" ];
+        #   variant = "mocha";
+        # }
       ];
   };
   programs = {
@@ -57,18 +76,18 @@
         enableZshIntegration = true;
       };
     };
-    # wezterm = { # os error 71
-    #   enable = true;
+    wezterm = { # os error 71
+      enable = true;
     #   enableBashIntegration = true;
     #   enableZshIntegration = true;
-    #   extraConfig = "return {
-    #     enable_wayland = true,
-    #   }";
-    # };
-    ags = { # enable ags
-      enable = true;
-      configDir = ./dots/ags;
+      extraConfig = "return {
+        enable_wayland = true,
+      }";
     };
+    # ags = { # enable ags
+    #   enable = true;
+    #   configDir = ./dots/ags;
+    # };
     bat = {
       enable = true;
     };
@@ -325,7 +344,7 @@
       package = pkgs.phinger-cursors;
       # package = pkgs.capitaine-cursors-themed;
       name = "phinger-cursors";
-      name = "Capitaine Gruvbox";
+      # name = "Capitaine Cursors (Gruvbox)";
       size = 16;
     };
     iconTheme = {
@@ -333,21 +352,16 @@
       name = "Papirus";
     };
     theme = {
-      name = "Catppuccin-Mocha-Compact-Mauve-Dark";
-      package = pkgs.catppuccin-gtk.override {
-        accents = [ "blue" "flamingo" "green" "lavender" "maroon" "mauve" "peach" "pink" "red" "rosewater" "sapphire" "sky" "teal" "yellow" ];
-        size = "compact";
-        tweaks = [ "normal" ];
-        variant = "mocha";
-      };
+      name = "Gruvbox-Dark-B";
+      package = pkgs.gruvbox-gtk-theme;
     };
   };
   qt = {
     enable = true;
-    platformTheme = "qtct";
-    style = {
-      name = "kvantum";
-    };
+    platformTheme = "gtk";
+    # style = {
+    #   name = "kvantum";
+    # };
   };
   # home.file."../../etc/firefox/policies/policies.json".source = ./dots/firefox/policies.json;
   home.file.".mozilla/firefox/generic/user.js".source = ./dots/firefox/user.js;

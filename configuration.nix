@@ -180,6 +180,16 @@
         "electron-19.1.9" # not sure
       ];
     };
+    overlays = [(
+      final: prev: {
+        pspp = prev.pspp.overrideAttrs (old: {
+            src = prev.fetchurl {
+              url = "https://benpfaff.org/~blp/pspp-master/20231105144641/x86_64/pspp-2.0.0-pre3g2c9fe2-x86_64-build20231105145055.tar.gz";
+              sha256 = "sha256-fdf4bff388cb069127d7d5a1d2b9e4744e5bf0f8914899abe7bbfff902df1782";
+           };
+        });
+      })
+    ];
   };
   virtualisation = {
     libvirtd = {
@@ -282,8 +292,8 @@
       imv
       jq
       libappindicator
-      libnotify # hyprland to-do might be unnecessary with dunst
       lshw
+      mc
       # mpd
       # ncmpcpp
       ncspot
@@ -319,6 +329,7 @@
       lutris
       bottles
       # aichat
+      ani-cli
       bitwarden
       cartridges
       # calibre

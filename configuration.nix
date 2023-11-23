@@ -181,9 +181,9 @@
       ];
     };
     overlays = [(
-      final: prev: {
-        pspp = prev.pspp.overrideAttrs (old: {
-            src = prev.fetchurl {
+      self: super: {
+        pspp = super.pspp.overrideAttrs (old: {
+            src = super.fetchurl {
               url = "https://benpfaff.org/~blp/pspp-master/20231105144641/x86_64/pspp-2.0.0-pre3g2c9fe2-x86_64-build20231105145055.tar.gz";
               sha256 = "sha256-10hpvw1gkzxvwymrjj4iz3q5nkklwjwx58fmswkr21nbi3rvzx7x";
             };

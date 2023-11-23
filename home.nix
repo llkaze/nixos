@@ -76,7 +76,7 @@
         enableZshIntegration = true;
       };
     };
-    wezterm = { # os error 71
+    wezterm = {
       enable = true;
     #   enableBashIntegration = true;
     #   enableZshIntegration = true;

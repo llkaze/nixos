@@ -257,8 +257,14 @@ user_pref("mousewheel.default.delta_multiplier_y", 300);
  * START: MY OVERRIDES                                                      *
 ****************************************************************************/
 // Enter your personal prefs below this line:
-user_pref("privacy.sanitize.pending", "[{\"id\":\"shutdown\",\"itemsToClear\":[\"cache\",\"cookies\",\"offlineApps\"],\"options\":{}},{\"id\":\"newtab-container\",\"itemsToClear\":[],\"options\":{}}]");
 user_pref("privacy.sanitize.sanitizeOnShutdown", true);
+user_pref("privacy.clearOnShutdown.cache", true);     // [DEFAULT: true]
+user_pref("privacy.clearOnShutdown.downloads", true); // [DEFAULT: true]
+user_pref("privacy.clearOnShutdown.formdata", true);  // [DEFAULT: true]
+user_pref("privacy.clearOnShutdown.history", false);   // [DEFAULT: true]
+user_pref("privacy.clearOnShutdown.sessions", true);  // [DEFAULT: true]
+user_pref("privacy.clearOnShutdown.cookies", true); // Cookies
+user_pref("privacy.clearOnShutdown.offlineApps", true); // Site Data
 user_pref("privacy.donottrackheader.enabled", true); 
 user_pref("privacy.fingerprintingProtection", true);
 user_pref("dom.security.https_only_mode", true);

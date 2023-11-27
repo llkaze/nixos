@@ -9,10 +9,17 @@
       url = "github:NixOS/nixpkgs/release-23.05";
     };
     nixpkgs.follows = "unstable"; # define which branch you want to use for nixpkgs
-
+    anyrun = {
+      url = "github:Kirottu/anyrun";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     darwin = {
       url = "github:lnl7/nix-darwin";
       inputs.nixpkgs.follows = "nixpkgs"
+    };
+    eww = {
+      url = "github:elkowar/eww";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -22,15 +29,27 @@
       url = "github:vaxerski/Hyprland";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nur = {
-      url = "github:nix-community/NUR";
+    hyprland-contrib = {
+      url = "github:hyprwm/contrib";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    hyprland-plugins = {
+      url = "github:hyprwm/hyprland-plugins";
+      inputs.hyprland.follows = "hyprland";
     };
     nix-colors = {
       url = "github:Misterio77/nix-colors";
     };
+    nix-gaming = {
+      url = "github:fufexan/nix-gaming";
+      inputs.flake-parts.follows = "flake-parts";
+    };
     nixos-wsl = {
       url = "github:nix-community/nixos-wsl";
       inputs.nixpkgs.follows = "nixpkgs"
+    };
+    nur = {
+      url = "github:nix-community/NUR";
     };
     sops-nix = {
       url = "github:Mic92/sops-nix" # generate ssh-key: ssh-keygen -q -N "" -t ed25519 -f ~/.ssh/id_ed25519_for_nixos, generate new sops key from private ssh key: nix run nixpkgs#ssh-to-age -- -private-key -i ~/.ssh/id_ed25519_for_nixos > ~/.config/sops/age/keys.txt
@@ -41,7 +60,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, darwin, home-manager, hyprland, nix-colors, nur, sops-nix, stable, unstable, utils, }@inputs: utils.lib.mkFlake {
+  outputs = { self, nixpkgs, anyrun, darwin, eww, home-manager, hyprland, hyprland-contrib, hyprland-plugins, nix-colors, nix-gaming, nixos-wsl, nur, sops-nix, stable, unstable, utils, }@inputs: utils.lib.mkFlake {
     inherit self inputs;
     # Channel definitions.
     # Channels are automatically generated from nixpkgs inputs

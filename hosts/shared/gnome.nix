@@ -63,5 +63,28 @@
     sessionVariables = {
       NIXOS_OZONE_WL = "1"; # wayland
     };
+    systemPackages = with pkgs; [
+        # gruvbox-gtk-theme
+        # tokyo-night-gtk
+        # whitesur-gtk-theme
+        gnome.gnome-themes-extra
+        gnome.gnome-tweaks
+        gnomeExtensions.blur-my-shell      
+        gnomeExtensions.forge
+        gnomeExtensions.material-shell
+        gtk-engine-murrine
+        nwg-look
+        papirus-icon-theme
+        phinger-cursors
+        (catppuccin-papirus-folders.override {
+          accent = "mauve";
+          flavor = "mocha";
+        })
+        (catppuccin-gtk.override {
+          accents = [ "mauve" ];
+          size = "compact";
+          variant = "mocha";
+        })
+    ];
   };  
 }

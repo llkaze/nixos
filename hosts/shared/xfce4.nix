@@ -8,6 +8,9 @@
         lightdm = {
           enable = true;
           greeters = {
+            gtk = {
+              enable = false;
+            };
             mini = {
               enable = true;
               user = "lin";

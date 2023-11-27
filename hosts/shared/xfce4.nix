@@ -44,7 +44,7 @@
       mousepad # text edit
       parole # img 
       ristretto # media player
-      thunar
+      # thunar
       # xfce4-appfinder
       xfce4-taskmanager
       xfce4-terminal

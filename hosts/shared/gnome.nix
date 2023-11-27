@@ -60,5 +60,8 @@
       totem # movie player
       yelp # help
     ]);
+    sessionVariables = {
+      NIXOS_OZONE_WL = "1"; # wayland
+    };
   };  
 }

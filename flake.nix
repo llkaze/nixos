@@ -33,8 +33,9 @@
       inputs.nixpkgs.follows = "nixpkgs"
     };
     sops-nix = {
-      url = "github:Mic92/sops-nix"}; # generate ssh-key: ssh-keygen -q -N "" -t ed25519 -f ~/.ssh/id_ed25519_for_nixos, generate new sops key from private ssh key: nix run nixpkgs#ssh-to-age -- -private-key -i ~/.ssh/id_ed25519_for_nixos > ~/.config/sops/age/keys.txt
+      url = "github:Mic92/sops-nix" # generate ssh-key: ssh-keygen -q -N "" -t ed25519 -f ~/.ssh/id_ed25519_for_nixos, generate new sops key from private ssh key: nix run nixpkgs#ssh-to-age -- -private-key -i ~/.ssh/id_ed25519_for_nixos > ~/.config/sops/age/keys.txt
       inputs.nixpkgs.follows = "nixpkgs";
+    };
     utils = {
       url = "github:gytis-ivaskevicius/flake-utils-plus"
     };

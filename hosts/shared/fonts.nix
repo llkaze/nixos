@@ -12,8 +12,7 @@
     packages = with pkgs; [
       font-awesome
       google-fonts
-      iosevka-comfy.comfy
-      iosevka-comfy.comfy-wide-fixed
+      iosevka-comfy.comfy-wide-fixed # preferred terminal font
       maple-mono
       nerdfonts
     ];

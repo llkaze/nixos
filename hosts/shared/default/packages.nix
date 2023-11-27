@@ -9,6 +9,7 @@
       direnv
       duf
       eza
+      fastfetch
       fd
       feh
       ffmpeg

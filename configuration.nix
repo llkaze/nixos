@@ -32,6 +32,31 @@
     firewall = {
       enable = true;
       allowPing = true;
+      # allowedUDPPorts = [ 51820 ]; # wireguard
+    };
+    # wireguard.interfaces = {
+    #   wg0 = {
+    #     ips = [ "10.8.0.4/24" ];
+    #     listenPort = 51820;
+    #     privateKey = "x";
+    #     peers = [{
+    #       publicKey = "x";
+    #       presharedKey = "x";
+    #       allowedIPs = [ "0.0.0.0/0" ];
+    #       endpoint = "x:51820";
+    #       persistentKeepalive = 25;
+    # Table = 42 PostUp = ip rule add from <your WireGuard IP address> table 42 PostDown = ip rule del from <your WireGuard IP address> table 42  Then you should be able to use the WireGuard interface by explicitly using the Wireguard IP address in the application. 
+    #     }];
+    #   };
+    # };
+    wg-quick = {
+      interfaces = {
+        wg0 = {
+          configFile = "/etc/wireguard/wg0.conf";
+          listenPort = 51820;
+          autostart = true;
+        };
+      };
     };
   };
   time = {
@@ -305,7 +330,7 @@
       jq
       libappindicator
       lshw
-      mc
+      # mc nnn fm pcmanfm
       # mpd
       # ncmpcpp
       ncspot
@@ -314,6 +339,7 @@
       nix-tree
       os-prober
       pavucontrol # hyprland
+      pfetch-rs
       piper
       pipes-rs
       # psst
@@ -325,6 +351,7 @@
       sct
       sl
       slurp # hyprland
+      sops
       speedtest-go
       # speedtest-rs # rust equivalent
       swww
@@ -363,7 +390,7 @@
       thunderbird
       ungoogled-chromium
       vlc
-      webcord-vencord
+      # webcord-vencord
       zathura
     ];
     shellAliases = {

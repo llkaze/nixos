@@ -15,6 +15,10 @@
         };
         gtk = {
           enable = true;
+          # theme = {
+          #   package = "";
+          #   name = "";
+          # };
         };
       };
       packages = with pkgs; [
@@ -23,6 +27,7 @@
         gtk-engine-murrine
         gnomeExtensions.material-shell
         gnomeExtensions.forge
+        gnomeExtensions.blur-my-shell
         nautilus-open-any-terminal
         # catppuccin-gtk.override {
         #   accents = [ "blue" "flamingo" "green" "lavender" "maroon" "mauve" "peach" "pink" "red" "rosewater" "sapphire" "sky" "teal" "yellow" ];

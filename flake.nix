@@ -8,7 +8,7 @@
     stable = {
       url = "github:NixOS/nixpkgs/release-23.05";
     };
-    nixpkgs.follows = "unstable"; # define which branch you want to use for nixpkgs, to-do add sops
+    nixpkgs.follows = "unstable"; # define which branch you want to use for nixpkgs
 
     darwin = {
       url = "github:lnl7/nix-darwin";
@@ -46,7 +46,7 @@
     # Channel definitions.
     # Channels are automatically generated from nixpkgs inputs
     # e.g the inputs which contain `legacyPackages` attribute are used.
-    channelsConfig = { allowUnfree = true; allowUnfree = true; }; # allowBroken = true; allowInsecure = true;
+    channelsConfig = { allowUnfree = true; }; # allowBroken = true; allowInsecure = true;
 
     ### Hosts ###
     let

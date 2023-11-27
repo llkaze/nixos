@@ -59,9 +59,8 @@
     hostDefaults = {
       system = "x86_64-linux";
       modules = [
-        ./hosts/sharedConfiguration.nix
-        ./hosts/sharedPackages.nix
-        ./hosts/sharedHome.nix
+        ./hosts/shared/default/configuration.nix
+        ./hosts/shared/default/packages.nix
         home-manager.nixosModules.home-manager
       ];
       channelName = "nixpkgs";

@@ -4,7 +4,6 @@
     systemPackages = with pkgs; [
       vim
       wget
-      curl
       cmake
       croc
       direnv
@@ -17,7 +16,6 @@
       fzf
       gcc
       gnumake
-      gzip
       htop
       jq
       lshw

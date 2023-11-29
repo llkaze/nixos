@@ -9,9 +9,7 @@
       direnv
       duf
       eza
-      fastfetch
       fd
-      feh
       ffmpeg
       file
       fzf
@@ -20,9 +18,10 @@
       htop
       jq
       lshw
+      nitch
       nix-tree
       os-prober
-      pfetch-rs
+      pfetch-rs   # alt: neofetch fastfetch 
       ranger  # alt: mc nnn fm pcmanfm
       ripgrep
       sops

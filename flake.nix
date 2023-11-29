@@ -25,6 +25,18 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs"; 
     };
+    homebrew-bundle = {
+      url = "github:homebrew/homebrew-bundle";
+      flake = false;
+    };
+    homebrew-cask = {
+      url = "github:homebrew/homebrew-cask";
+      flake = false;
+    };
+    homebrew-core = {
+      url = "github:homebrew/homebrew-core";
+      flake = false;
+    };
     hyprland = {
       url = "github:vaxerski/Hyprland";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -37,12 +49,23 @@
       url = "github:hyprwm/hyprland-plugins";
       inputs.hyprland.follows = "hyprland";
     };
+    hyprpaper = {
+      url = "github:hyprwm/hyprpaper";
+      inputs.hyprland.follows = "nixpkgs";
+    };
+    hyprpicker = {
+      url = "github:hyprwm/hyprpicker";
+      inputs.hyprland.follows = "nixpkgs";
+    };
     nix-colors = {
       url = "github:Misterio77/nix-colors";
     };
     nix-gaming = {
       url = "github:fufexan/nix-gaming";
       inputs.flake-parts.follows = "flake-parts";
+    };
+    nix-homebrew = {
+      url = "github:zhaofengli-wip/nix-homebrew";
     };
     nixos-wsl = {
       url = "github:nix-community/nixos-wsl";
@@ -60,7 +83,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, anyrun, darwin, eww, home-manager, hyprland, hyprland-contrib, hyprland-plugins, nix-colors, nix-gaming, nixos-wsl, nur, sops-nix, stable, unstable, utils, }@inputs: utils.lib.mkFlake {
+  outputs = { self, nixpkgs, anyrun, darwin, eww, home-manager, homebrew-bundle, homebrew-cask, homebrew-core, hyprland, hyprland-contrib, hyprland-plugins, hyprpaper, hyprpicker, nix-colors, nix-gaming, nix-homebrew, nixos-wsl, nur, sops-nix, stable, unstable, utils, }@inputs: utils.lib.mkFlake {
     inherit self inputs;
     # Channel definitions.
     # Channels are automatically generated from nixpkgs inputs
@@ -91,7 +114,7 @@
       system = "x86_64-linux";
       # channelName = "unstable"; # unneccessary because it will use the channel defined by nixpkgs
       modules = [
-        ./hosts/${Hostname1}/default.nix
+        ./hosts/host1/default.nix
       ];
       # extraArgs = { abc = 123; }; # Extra arguments to be passed to the modules
       # specialArgs = { thing = "abc"; }; # These are not part of the module system, so they can be used in `imports` lines without infinite recursion
@@ -130,6 +153,8 @@
     #   builder = darwin.lib.darwinSystem;
     #   channelName = "stable";
     #   modules = [
+            # home-manager.darwinModules.home-manager
+            # nix-homebrew.darwinModules.nix-homebrew
     #     ./hosts/usopp/default.nix
     #   ];
     # };
@@ -155,7 +180,7 @@
     # Virtual machine using qemu
     hosts.${Hostname2} = {
       modules = [
-      ./hosts/${Hostname2}/default.nix
+      ./hosts/host2/default.nix
       ];
     };
   };

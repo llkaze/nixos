@@ -1,7 +1,7 @@
 { config, lib, pkgs, modulesPath, ... }:
 {
   imports = [ 
-    (modulesPath + "/installer/scan/not-detected.nix")
+    (modulesPath + "/profiles/qemu-guest.nix")
     ../shared/security.nix
   ];
 
@@ -10,18 +10,18 @@
     kernelModules = [ "kvm-intel" ];
     extraModulePackages = with config.boot.kernelPackages; [ wireguard ];
     initrd = {
-      availableKernelModules = [ "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" ];
+      availableKernelModules = [ "xhci_pci" "ahci" "virtio_pci" "sr_mod" "virtio_blk" ];
       kernelModules = [ ];
     };
   };
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/1e9a3745-95ce-43bf-bea3-e8b54c869894";
+    { device = "/dev/disk/by-uuid/b2006940-6f2e-48fe-94c5-78da18c8b861";
       fsType = "ext4";
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/ED09-9370";
+    { device = "/dev/disk/by-uuid/D137-F6AD";
       fsType = "vfat";
     };
 

@@ -33,6 +33,8 @@
       enable = true;
       allowPing = true;
       # allowedUDPPorts = [ 51820 ]; # wireguard
+      # allowedUDPPorts = [ 8080 ]; # calibre
+      # allowedTCPPorts = [ 8080 ];
     };
     # wireguard.interfaces = {
     #   wg0 = {
@@ -199,6 +201,12 @@
   };
   nixpkgs = {
     config = {
+      # packageOverrides = pkgs: {
+      #   sunshine = pkgs.sunshine.override {
+      #     cudaSupport = true;
+      #     stdenv = pkgs.cudaPackages.backendStdenv;
+      #   };
+      # };
       allowUnfree = true; 
       allowInsecure = true;
       permittedInsecurePackages = [
@@ -242,6 +250,8 @@
           "networkmanager"
           "wheel"
           "libvirtd"
+          "input"
+          "uinput"
         ];
         group = "users";
         home = "/home/lin";
@@ -336,6 +346,7 @@
       ncspot
       neofetch
       networkmanagerapplet
+      nixd
       nix-tree
       os-prober
       pavucontrol # hyprland
@@ -371,7 +382,7 @@
       ani-cli
       bitwarden
       cartridges
-      # calibre
+      calibre
       drawio
       etcher
       gimp-with-plugins
@@ -380,17 +391,18 @@
       # librewolf
       moonlight-qt
       nomacs
-      pspp
       obsidian
       openai-whisper
       qbittorrent
+      pspp
+      rustdesk
       sniffnet
       spotify
-      sunshine
       thunderbird
+      tor-browser
       ungoogled-chromium
       vlc
-      # webcord-vencord
+      webcord-vencord
       zathura
     ];
     shellAliases = {
@@ -421,6 +433,23 @@
       # QT_QPA_PLATFORMTHEME = "qt5ct";
     };
   };
+  # security.wrappers.sunshine = {
+  #   owner = "root";
+  #   group = "root";
+  #   capabilities = "cap_sys_admin+ep";
+  #   source = "${pkgs.sunshine}/bin/sunshine";
+  # };
+  # systemd.user.services.sunshine = {
+  #   description = "sunshine";
+  #   wantedBy = [ "graphical-session.target" ];
+  #   serviceConfig = {
+  #     ExecStart = "${config.security.wrapperDir}/sunshine";
+  #     ExecStartPre = "${lib.getExe pkgs.xorg.xset} dpms force on";
+  #     Restart = "always";
+  #   };
+  # };
+  # hardware.uinput.enable = true;
+  # services.udev.extraRules = ''Sunshine KERNEL=="uinput", GROUP="input", MODE="0660", OPTIONS+="static_node=uinput"'';
   fonts = {
     fontDir = {
       enable = true;

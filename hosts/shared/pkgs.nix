@@ -3,13 +3,14 @@
   environment = {
     systemPackages = with pkgs; [
       vim
-      wget
       cmake
       croc
+      ddh
       direnv
       duf
       eza
       fd
+      fet-sh   # alt: neofetch fastfetch pfetch-rs nitch
       ffmpeg
       file
       fzf
@@ -18,16 +19,18 @@
       htop
       jq
       lshw
-      nitch
       nix-tree
       os-prober
-      pfetch-rs   # alt: neofetch fastfetch 
-      ranger  # alt: mc nnn fm pcmanfm
+      pciutils
       ripgrep
       sops
       speedtest-go  # alt: speedtest-rs
+      tldr
       unzip
       w3m
+      wget
+      yazi   # alt: nnn fff mc ranger fm pcmanfm
+      zoxide
     ];
   };
 }

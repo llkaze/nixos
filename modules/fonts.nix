@@ -10,11 +10,13 @@
       enable = true;
     };
     packages = with pkgs; [
+      corefonts
       font-awesome
       google-fonts
       iosevka-comfy.comfy-wide-fixed # preferred terminal font
       maple-mono
       nerdfonts
+      vistafonts
     ];
   };
 }

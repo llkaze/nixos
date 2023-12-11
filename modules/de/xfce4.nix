@@ -1,4 +1,4 @@
-{ config, inputs, lib, pkgs, ... }:
+{ config, inputs, lib, pkgs, userName, ... }:
 {
   services = {
     xserver = {
@@ -13,7 +13,7 @@
             };
             mini = {
               enable = true;
-              user = "lin";
+              user = "${userName}";
               extraConfig = ''
                 [greeter]
                 show-password-label = false

@@ -1,18 +1,30 @@
-{ config, inputs, lib, pkgs, ... }:
+{ config, inputs, lib, pkgs, hostname1, userName ... }:
 {
   imports = [
-    inputs.nix-gaming.nixosModules.pipewireLowLatency
     inputs.nix-gaming.nixosModules.steamCompat
     inputs.nix-gaming.nixosModules.proton-ge
-    ../shared/DE-WM/hypr.nix
-    ../shared/nvidia.nix
-    ../shared/fonts.nix
-    ../shared/pipewire.nix
-    ../shared/virt
-    ../shared/wireguard
+    ../../modules/firefox.nix
+    ../../modules/fonts.nix
+    ../../modules/main-user.nix
+    ../../modules/nvidia.nix
+    ../../modules/pipewire.nix
+    ../../modules/security.nix
+    ../../modules/wireguard.nix
+    ../../modules/WM/hypr.nix
     ./packages.nix
     ./boot.nix
   ];
+  special = {
+    hypr.enable = true;
+    nvidia.enable = true;
+    wireguard.enable = true;
+    pipewire.enable = true;
+    firefox = {
+      enable = true;
+      enableBetterfox = true;
+      enablePolicies = true;
+    };
+  };
   networking = {
     hostname = "${hostname1}";
     networkmanager = {
@@ -37,20 +49,12 @@
     };
   };
   users = {
-    users = {
-      ${username} = {
-        isNormalUser = true;
-        createHome = true;
-        description = "user";
-        extraGroups = [
-          "networkmanager"
-          "wheel"
-        ];
-        group = "users";
-        home = "/home/${username}";
-        # shell = pkgs.zsh # enable zsh as default shell for user
-        # password = "nixos"; # change with passwd or using nano/vim
-      };
+    users.${userName} = {
+      extraGroups = [
+        "networkmanager"
+        "wheel"
+        "libvirtd"
+      ];
     };
   };
   time = {
@@ -71,6 +75,11 @@
       package = pkgs.bluez;
     };
   };
+  security = {
+    sudo = {
+      wheelNeedsPassword = false;
+    };
+  };
   services = {
     blueman = {
       enable = true;
@@ -84,19 +93,27 @@
     tailscale = {
       enable = true;
     };
-    jellyfin = {
-      enable = true; # sudo mkdir /media && sudo chown $USER: /media
-    };
-    mullvad-vpn = {
-      enable = true;
-    };
   };
   programs = {
     steam = {
       enable = true;
       extraCompatPackages = [
         inputs.nix-gaming.packages.${pkgs.system}.proton-ge
+        pkgs.mangohud
       ];
+    };
+  };
+  virtualisation = {
+    libvirtd = {
+      enable = true;
+    };
+    spiceUSBRedirection = {
+      enable = true;
+    };
+  };
+  programs = {
+      virt-manager = {
+      enable = true;
     };
   };
   system = {

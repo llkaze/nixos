@@ -1,12 +1,12 @@
-{ config, inputs, lib, pkgs, ... }:
+{ config, inputs, lib, pkgs, hostname2, userName, ... }:
 {
   imports = [
-    ../shared/DE-WM/xfce4.nix
+    ../../modules/de/plasma5.nix
     ./packages.nix
     ./boot.nix
   ];
   networking = {
-    hostname = "${hostname1}";
+    hostname = "${hostname2}";
     networkmanager = {
       enable = true;
       # wifi = {
@@ -29,20 +29,11 @@
     };
   };
   users = {
-    users = {
-      ${username} = {
-        isNormalUser = true;
-        createHome = true;
-        description = "user";
-        extraGroups = [
-          "networkmanager"
-          "wheel"
-        ];
-        group = "users";
-        home = "/home/${username}";
-        # shell = pkgs.zsh # enable zsh as default shell for user
-        # password = "nixos"; # change with passwd or using nano/vim
-      };
+    users.${userName} = {
+      extraGroups = [
+        "networkmanager"
+        "wheel"
+      ];
     };
   };
   time = {
